@@ -234,13 +234,15 @@
         top: 100%;
         left: 0;
         right: 0;
-        background: var(--glass-bg);
-        backdrop-filter: var(--glass-backdrop);
-        border: 1px solid var(--glass-border);
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 0 0 var(--radius-xl) var(--radius-xl);
         flex-direction: column;
         padding: var(--space-xl);
         gap: var(--space-lg);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     }
     
     .nav-menu.active {
@@ -409,7 +411,8 @@
     
     .social-quantum {
         justify-content: center;
-        flex-wrap: wrap;
+        gap: var(--space-lg);
+        margin: var(--space-lg) 0;
     }
 }
 
@@ -417,6 +420,11 @@
 @media (max-width: 639px) {
     .container {
         padding: 0 var(--space-sm);
+    }
+    
+    /* Hide cursor follower on small screens */
+    #cursor-follower {
+        display: none !important;
     }
     
     /* Navigation */
@@ -444,11 +452,15 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: var(--bg-primary);
+        background: rgba(0, 0, 0, 0.98);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
         flex-direction: column;
         padding: var(--space-xl);
         gap: var(--space-xl);
         z-index: var(--z-modal);
+        justify-content: center;
+        align-items: center;
     }
     
     .nav-menu.active {
@@ -459,7 +471,19 @@
         font-size: var(--font-lg);
         padding: var(--space-md) 0;
         text-align: center;
-        border-bottom: 1px solid var(--glass-border);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--text-primary);
+        font-weight: var(--weight-medium);
+        width: 100%;
+        max-width: 200px;
+        transition: all var(--transition-normal);
+    }
+    
+    .nav-link:hover {
+        color: var(--primary-quantum);
+        background: rgba(0, 255, 136, 0.1);
+        border-radius: var(--radius-lg);
+        border-bottom-color: var(--primary-quantum);
     }
     
     .hamburger {
@@ -812,7 +836,8 @@
     
     .social-quantum {
         justify-content: center;
-        gap: var(--space-sm);
+        gap: var(--space-md);
+        margin: var(--space-md) 0;
     }
     
     .social-link {
@@ -954,6 +979,11 @@
 
 /* Touch device optimizations */
 @media (hover: none) and (pointer: coarse) {
+    /* Hide cursor follower on touch devices */
+    #cursor-follower {
+        display: none !important;
+    }
+    
     /* Ensure hover effects work on touch */
     .portfolio-item .portfolio-overlay {
         transform: translateY(100%);
