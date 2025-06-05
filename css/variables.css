@@ -1,0 +1,228 @@
+/* css/variables.css */
+/* Quantum-inspired design system variables */
+
+:root {
+    /* Color Palette - Dark Theme */
+    --primary-quantum: #00ff88;
+    --secondary-quantum: #ff6b35;
+    --tertiary-quantum: #4ecdc4;
+    --accent-primary: #a8e6cf;
+    --accent-secondary: #ff8b94;
+    --accent-tertiary: #b4a7d6;
+    
+    /* Neon Colors */
+    --neon-cyan: #00ffff;
+    --neon-magenta: #ff00ff;
+    --neon-yellow: #ffff00;
+    --neon-green: #00ff00;
+    --neon-orange: #ff4500;
+    --neon-purple: #8a2be2;
+    
+    /* Background Colors */
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #1a1a1a;
+    --bg-tertiary: #2a2a2a;
+    --bg-glass: rgba(255, 255, 255, 0.1);
+    --bg-glass-dark: rgba(0, 0, 0, 0.3);
+    
+    /* Text Colors */
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --text-tertiary: #808080;
+    --text-accent: var(--primary-quantum);
+    
+    /* Gradients */
+    --gradient-quantum: linear-gradient(135deg, var(--primary-quantum) 0%, var(--secondary-quantum) 50%, var(--tertiary-quantum) 100%);
+    --gradient-neon: linear-gradient(45deg, var(--neon-cyan) 0%, var(--neon-magenta) 25%, var(--neon-yellow) 50%, var(--neon-green) 75%, var(--neon-orange) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    --gradient-dark: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+    
+    /* Typography */
+    --font-primary: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-secondary: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-display: 'Orbitron', monospace;
+    
+    /* Font Sizes */
+    --font-xs: clamp(0.75rem, 2vw, 0.875rem);
+    --font-sm: clamp(0.875rem, 2.5vw, 1rem);
+    --font-base: clamp(1rem, 3vw, 1.125rem);
+    --font-lg: clamp(1.125rem, 3.5vw, 1.25rem);
+    --font-xl: clamp(1.25rem, 4vw, 1.5rem);
+    --font-2xl: clamp(1.5rem, 5vw, 2rem);
+    --font-3xl: clamp(2rem, 6vw, 3rem);
+    --font-4xl: clamp(3rem, 8vw, 4rem);
+    --font-5xl: clamp(4rem, 10vw, 6rem);
+    
+    /* Font Weights */
+    --weight-thin: 100;
+    --weight-light: 300;
+    --weight-normal: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    --weight-black: 900;
+    
+    /* Spacing */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+    --space-4xl: 6rem;
+    --space-5xl: 8rem;
+    
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-2xl: 24px;
+    --radius-full: 50%;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+    --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
+    --shadow-neon: 0 0 20px var(--primary-quantum);
+    --shadow-glow: 0 0 30px rgba(255, 255, 255, 0.3);
+    
+    /* Glass Morphism */
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-backdrop: blur(10px);
+    
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    --transition-quantum: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Animation Timings */
+    --animation-fast: 0.2s;
+    --animation-normal: 0.4s;
+    --animation-slow: 0.8s;
+    --animation-very-slow: 1.2s;
+    
+    /* Z-Index */
+    --z-dropdown: 1000;
+    --z-sticky: 1020;
+    --z-fixed: 1030;
+    --z-modal-backdrop: 1040;
+    --z-modal: 1050;
+    --z-popover: 1060;
+    --z-tooltip: 1070;
+    --z-toast: 1080;
+    
+    /* Breakpoints */
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
+    
+    /* Container */
+    --container-sm: 640px;
+    --container-md: 768px;
+    --container-lg: 1024px;
+    --container-xl: 1280px;
+    --container-2xl: 1400px;
+}
+
+/* Light Theme Variables */
+:root.light-theme {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-tertiary: #e9ecef;
+    --bg-glass: rgba(0, 0, 0, 0.1);
+    --bg-glass-dark: rgba(255, 255, 255, 0.3);
+    
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --text-tertiary: #6a6a6a;
+    
+    --glass-bg: rgba(0, 0, 0, 0.1);
+    --glass-border: rgba(0, 0, 0, 0.2);
+    
+    --shadow-neon: 0 0 20px rgba(0, 255, 136, 0.5);
+    --shadow-glow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+/* High Performance Mode */
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --transition-fast: 0.01ms;
+        --transition-normal: 0.01ms;
+        --transition-slow: 0.01ms;
+        --transition-quantum: 0.01ms;
+        --animation-fast: 0.01ms;
+        --animation-normal: 0.01ms;
+        --animation-slow: 0.01ms;
+        --animation-very-slow: 0.01ms;
+    }
+}
+
+/* Custom Properties for Components */
+:root {
+    /* Navbar */
+    --navbar-height: 70px;
+    --navbar-padding: var(--space-lg);
+    
+    /* Hero */
+    --hero-min-height: 100vh;
+    --hero-padding: var(--space-4xl);
+    
+    /* Section */
+    --section-padding: var(--space-5xl);
+    --section-gap: var(--space-4xl);
+    
+    /* Grid */
+    --grid-gap: var(--space-xl);
+    --grid-columns: repeat(auto-fit, minmax(300px, 1fr));
+    
+    /* Forms */
+    --input-height: 50px;
+    --input-padding: var(--space-md);
+    --input-border-radius: var(--radius-lg);
+    
+    /* Buttons */
+    --button-height: 50px;
+    --button-padding: var(--space-md) var(--space-xl);
+    --button-border-radius: var(--radius-lg);
+}
+
+/* Utility Classes */
+.quantum-glow {
+    box-shadow: var(--shadow-neon);
+}
+
+.glass-morphism {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-backdrop);
+    -webkit-backdrop-filter: var(--glass-backdrop);
+}
+
+.neon-text {
+    color: var(--primary-quantum);
+    text-shadow: 0 0 10px var(--primary-quantum);
+}
+
+.gradient-text {
+    background: var(--gradient-quantum);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}

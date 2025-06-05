@@ -1,0 +1,612 @@
+/* css/components.css */
+/* Reusable UI Components */
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+/* Buttons */
+.quantum-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--button-padding);
+    border-radius: var(--button-border-radius);
+    font-weight: var(--weight-semibold);
+    font-size: var(--font-base);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all var(--transition-quantum);
+    background: var(--gradient-quantum);
+    color: var(--bg-primary);
+    border: 2px solid transparent;
+    min-height: var(--button-height);
+}
+
+.quantum-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left var(--transition-slow);
+}
+
+.quantum-btn:hover::before {
+    left: 100%;
+}
+
+.quantum-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-neon), var(--shadow-xl);
+}
+
+.quantum-btn:active {
+    transform: translateY(0);
+}
+
+.quantum-ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.hologram-btn {
+    position: relative;
+    padding: var(--button-padding);
+    background: transparent;
+    border: 2px solid var(--primary-quantum);
+    color: var(--primary-quantum);
+    border-radius: var(--button-border-radius);
+    font-weight: var(--weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all var(--transition-quantum);
+}
+
+.hologram-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--primary-quantum);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-quantum);
+    z-index: -1;
+}
+
+.hologram-btn:hover::before {
+    transform: scaleX(1);
+}
+
+.hologram-btn:hover {
+    color: var(--bg-primary);
+    box-shadow: var(--shadow-neon);
+}
+
+/* Cards */
+.floating-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-backdrop);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    transition: all var(--transition-quantum);
+    position: relative;
+    overflow: hidden;
+}
+
+.floating-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gradient-quantum);
+    transform: scaleX(0);
+    transition: transform var(--transition-quantum);
+}
+
+.floating-card:hover::before {
+    transform: scaleX(1);
+}
+
+.floating-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-2xl), var(--shadow-neon);
+}
+
+.card-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 255, 136, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity var(--transition-slow);
+    pointer-events: none;
+}
+
+.floating-card:hover .card-glow {
+    opacity: 1;
+}
+
+/* Glass Morphism Elements */
+.glass-morphism {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-backdrop);
+    -webkit-backdrop-filter: var(--glass-backdrop);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+}
+
+/* Navigation Links */
+.nav-link {
+    position: relative;
+    padding: var(--space-sm) var(--space-md);
+    font-weight: var(--weight-medium);
+    color: var(--text-secondary);
+    transition: all var(--transition-normal);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    overflow: hidden;
+}
+
+.nav-link::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-quantum);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transform: translateY(100%);
+    transition: transform var(--transition-quantum);
+}
+
+.nav-link:hover::before {
+    transform: translateY(0);
+}
+
+.nav-link:hover {
+    color: transparent;
+}
+
+.nav-link.active {
+    color: var(--primary-quantum);
+}
+
+/* Form Elements */
+.floating-label {
+    position: relative;
+    margin-bottom: var(--space-xl);
+}
+
+.floating-label input,
+.floating-label textarea,
+.floating-label select {
+    width: 100%;
+    padding: var(--input-padding);
+    background: var(--glass-bg);
+    border: 2px solid var(--glass-border);
+    border-radius: var(--input-border-radius);
+    color: var(--text-primary);
+    font-size: var(--font-base);
+    transition: all var(--transition-normal);
+    min-height: var(--input-height);
+}
+
+.floating-label input:focus,
+.floating-label textarea:focus,
+.floating-label select:focus {
+    outline: none;
+    border-color: var(--primary-quantum);
+    box-shadow: var(--shadow-neon);
+}
+
+.floating-label label {
+    position: absolute;
+    top: 50%;
+    left: var(--input-padding);
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    font-size: var(--font-base);
+    transition: all var(--transition-normal);
+    pointer-events: none;
+    background: var(--bg-primary);
+    padding: 0 var(--space-sm);
+}
+
+.floating-label input:focus + label,
+.floating-label input:not(:placeholder-shown) + label,
+.floating-label textarea:focus + label,
+.floating-label textarea:not(:placeholder-shown) + label,
+.floating-label select:focus + label,
+.floating-label select:not([value=""]) + label {
+    top: 0;
+    font-size: var(--font-sm);
+    color: var(--primary-quantum);
+}
+
+.field-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: var(--input-border-radius);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    background: linear-gradient(45deg, var(--primary-quantum), var(--secondary-quantum));
+    z-index: -1;
+}
+
+.floating-label input:focus ~ .field-glow,
+.floating-label textarea:focus ~ .field-glow,
+.floating-label select:focus ~ .field-glow {
+    opacity: 0.1;
+}
+
+/* Progress Indicators */
+.progress-ring {
+    transform: rotate(-90deg);
+}
+
+.progress-ring-circle {
+    stroke-dasharray: 326.56;
+    stroke-dashoffset: 326.56;
+    transition: stroke-dashoffset var(--transition-slow);
+    stroke-linecap: round;
+}
+
+/* Hexagon Shapes */
+.skill-hexagon {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: var(--space-xl);
+    transition: all var(--transition-quantum);
+}
+
+.skill-hexagon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--glass-bg);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    border: 2px solid var(--glass-border);
+    transition: all var(--transition-quantum);
+}
+
+.skill-hexagon:hover::before {
+    background: var(--gradient-quantum);
+    box-shadow: var(--shadow-neon);
+}
+
+.hexagon-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 2;
+}
+
+.skill-hexagon:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Timeline Elements */
+.timeline-3d {
+    position: relative;
+    padding: var(--space-4xl) 0;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--gradient-quantum);
+    transform: translateX(-50%);
+    border-radius: var(--radius-full);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: var(--space-4xl);
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row;
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-year {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gradient-quantum);
+    color: var(--bg-primary);
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-full);
+    font-weight: var(--weight-bold);
+    font-size: var(--font-lg);
+    z-index: 10;
+}
+
+.timeline-content {
+    width: 45%;
+    padding: var(--space-xl);
+    margin: 0 5%;
+    border-radius: var(--radius-xl);
+    transition: all var(--transition-quantum);
+}
+
+.timeline-content:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-neon);
+}
+
+.timeline-icon {
+    font-size: var(--font-3xl);
+    margin-bottom: var(--space-md);
+}
+
+.timeline-tech {
+    display: flex;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.tech-tag {
+    background: var(--primary-quantum);
+    color: var(--bg-primary);
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-full);
+    font-size: var(--font-xs);
+    font-weight: var(--weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Section Headers */
+.section-header {
+    text-align: center;
+    margin-bottom: var(--section-gap);
+}
+
+.section-title {
+    position: relative;
+    margin-bottom: var(--space-lg);
+}
+
+.title-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: var(--font-5xl);
+    font-weight: var(--weight-black);
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+    z-index: -1;
+    font-family: var(--font-display);
+}
+
+.title-main {
+    position: relative;
+    font-size: var(--font-3xl);
+    font-weight: var(--weight-bold);
+    background: var(--gradient-quantum);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    z-index: 2;
+}
+
+.section-subtitle {
+    font-size: var(--font-lg);
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Status Indicators */
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+    background: var(--text-tertiary);
+    transition: all var(--transition-normal);
+}
+
+.status-dot.active {
+    background: var(--primary-quantum);
+    box-shadow: 0 0 10px var(--primary-quantum);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.2);
+    }
+}
+
+/* Quantum Effects */
+.quantum-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: var(--radius-full);
+    background: var(--primary-quantum);
+    position: relative;
+    animation: quantum-pulse 2s infinite;
+}
+
+.quantum-dot::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 2px solid var(--primary-quantum);
+    border-radius: var(--radius-full);
+    opacity: 0.3;
+    animation: quantum-ring 2s infinite;
+}
+
+@keyframes quantum-pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.5);
+    }
+}
+
+@keyframes quantum-ring {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Loading Elements */
+.neural-loader {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto var(--space-xl);
+}
+
+.neural-node {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-quantum);
+    border-radius: var(--radius-full);
+    animation: neural-pulse 2s infinite;
+}
+
+.neural-node:nth-child(1) {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 0s;
+}
+
+.neural-node:nth-child(2) {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    animation-delay: 0.5s;
+}
+
+.neural-node:nth-child(3) {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 1s;
+}
+
+.neural-node:nth-child(4) {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    animation-delay: 1.5s;
+}
+
+@keyframes neural-pulse {
+    0%, 100% {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.2);
+        box-shadow: 0 0 20px var(--primary-quantum);
+    }
+}
+
+.neural-connections {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(45deg, transparent 48%, var(--primary-quantum) 49%, var(--primary-quantum) 51%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, var(--primary-quantum) 49%, var(--primary-quantum) 51%, transparent 52%);
+    opacity: 0.3;
+    animation: connections-glow 4s infinite;
+}
+
+@keyframes connections-glow {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.5; }
+}

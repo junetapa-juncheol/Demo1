@@ -1,0 +1,522 @@
+/* css/themes.css */
+/* Theme System with Dark/Light Mode Support */
+
+/* Dark Theme (Default) */
+.dark-theme {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #1a1a1a;
+    --bg-tertiary: #2a2a2a;
+    --bg-glass: rgba(255, 255, 255, 0.1);
+    --bg-glass-dark: rgba(0, 0, 0, 0.3);
+    
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --text-tertiary: #808080;
+    --text-accent: var(--primary-quantum);
+    
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-backdrop: blur(10px);
+    
+    --shadow-neon: 0 0 20px var(--primary-quantum);
+    --shadow-glow: 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+/* Light Theme */
+.light-theme {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-tertiary: #e9ecef;
+    --bg-glass: rgba(0, 0, 0, 0.1);
+    --bg-glass-dark: rgba(255, 255, 255, 0.8);
+    
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --text-tertiary: #6a6a6a;
+    --text-accent: var(--primary-quantum);
+    
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-backdrop: blur(10px);
+    
+    --shadow-neon: 0 0 20px rgba(0, 255, 136, 0.5);
+    --shadow-glow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Theme-specific component adjustments */
+.light-theme .navbar {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.light-theme .hero {
+    background: radial-gradient(circle at center, #f8f9fa 0%, #ffffff 100%);
+}
+
+.light-theme .hero-badge {
+    background: rgba(0, 0, 0, 0.1);
+    color: var(--text-secondary);
+}
+
+.light-theme .floating-card {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.light-theme .quantum-card {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.light-theme .filter-btn {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: var(--text-secondary);
+}
+
+.light-theme .filter-btn.active,
+.light-theme .filter-btn:hover {
+    background: var(--primary-quantum);
+    color: white;
+}
+
+.light-theme .quantum-form {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.light-theme .floating-label input,
+.light-theme .floating-label textarea,
+.light-theme .floating-label select {
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    color: var(--text-primary);
+}
+
+.light-theme .floating-label input:focus,
+.light-theme .floating-label textarea:focus,
+.light-theme .floating-label select:focus {
+    border-color: var(--primary-quantum);
+    background: white;
+}
+
+.light-theme .social-link {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Auto Theme (System Preference) */
+@media (prefers-color-scheme: dark) {
+    .auto-theme {
+        --bg-primary: #0a0a0a;
+        --bg-secondary: #1a1a1a;
+        --bg-tertiary: #2a2a2a;
+        --bg-glass: rgba(255, 255, 255, 0.1);
+        --bg-glass-dark: rgba(0, 0, 0, 0.3);
+        
+        --text-primary: #ffffff;
+        --text-secondary: #b0b0b0;
+        --text-tertiary: #808080;
+        --text-accent: var(--primary-quantum);
+        
+        --glass-bg: rgba(255, 255, 255, 0.1);
+        --glass-border: rgba(255, 255, 255, 0.2);
+        --glass-backdrop: blur(10px);
+        
+        --shadow-neon: 0 0 20px var(--primary-quantum);
+        --shadow-glow: 0 0 30px rgba(255, 255, 255, 0.3);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .auto-theme {
+        --bg-primary: #ffffff;
+        --bg-secondary: #f8f9fa;
+        --bg-tertiary: #e9ecef;
+        --bg-glass: rgba(0, 0, 0, 0.1);
+        --bg-glass-dark: rgba(255, 255, 255, 0.8);
+        
+        --text-primary: #1a1a1a;
+        --text-secondary: #4a4a4a;
+        --text-tertiary: #6a6a6a;
+        --text-accent: var(--primary-quantum);
+        
+        --glass-bg: rgba(255, 255, 255, 0.8);
+        --glass-border: rgba(0, 0, 0, 0.1);
+        --glass-backdrop: blur(10px);
+        
+        --shadow-neon: 0 0 20px rgba(0, 255, 136, 0.5);
+        --shadow-glow: 0 0 30px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* High Contrast Theme */
+.high-contrast-theme {
+    --bg-primary: #000000;
+    --bg-secondary: #111111;
+    --bg-tertiary: #222222;
+    --bg-glass: rgba(255, 255, 255, 0.2);
+    --bg-glass-dark: rgba(0, 0, 0, 0.8);
+    
+    --text-primary: #ffffff;
+    --text-secondary: #ffffff;
+    --text-tertiary: #cccccc;
+    --text-accent: #00ff00;
+    
+    --primary-quantum: #00ff00;
+    --secondary-quantum: #ffff00;
+    --tertiary-quantum: #00ffff;
+    
+    --glass-bg: rgba(255, 255, 255, 0.2);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --glass-backdrop: blur(5px);
+    
+    --shadow-neon: 0 0 20px #00ff00;
+    --shadow-glow: 0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+/* Theme transition animations */
+* {
+    transition: 
+        background-color var(--transition-normal),
+        color var(--transition-normal),
+        border-color var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+/* Disable transitions during theme change */
+.theme-transitioning * {
+    transition: none !important;
+}
+
+/* Custom scrollbar for themes */
+.dark-theme ::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+.light-theme ::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+.dark-theme ::-webkit-scrollbar-thumb {
+    background: var(--primary-quantum);
+}
+
+.light-theme ::-webkit-scrollbar-thumb {
+    background: var(--primary-quantum);
+    opacity: 0.8;
+}
+
+/* Theme-specific text effects */
+.light-theme .glitch-text::before {
+    color: var(--secondary-quantum);
+}
+
+.light-theme .glitch-text::after {
+    color: var(--tertiary-quantum);
+}
+
+.light-theme .neon-text {
+    text-shadow: 
+        0 0 5px var(--primary-quantum),
+        0 0 10px var(--primary-quantum),
+        0 0 15px var(--primary-quantum);
+}
+
+/* Theme-specific backgrounds */
+.light-theme .hero-3d-bg,
+.light-theme .footer-bg {
+    opacity: 0.1;
+}
+
+.dark-theme .hero-3d-bg,
+.dark-theme .footer-bg {
+    opacity: 0.3;
+}
+
+/* Theme-specific glass effects */
+.light-theme .glass-morphism {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.dark-theme .glass-morphism {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Theme-specific particle effects */
+.light-theme .particle {
+    background: var(--primary-quantum);
+    opacity: 0.6;
+}
+
+.dark-theme .particle {
+    background: var(--primary-quantum);
+    opacity: 0.8;
+}
+
+/* Theme-specific neural loader */
+.light-theme .neural-node {
+    background: var(--primary-quantum);
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.light-theme .neural-connections {
+    background: 
+        linear-gradient(45deg, transparent 48%, rgba(0, 255, 136, 0.3) 49%, rgba(0, 255, 136, 0.3) 51%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, rgba(0, 255, 136, 0.3) 49%, rgba(0, 255, 136, 0.3) 51%, transparent 52%);
+}
+
+/* Theme-specific button effects */
+.light-theme .quantum-btn {
+    box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
+}
+
+.light-theme .quantum-btn:hover {
+    box-shadow: 
+        0 8px 25px rgba(0, 255, 136, 0.4),
+        0 0 30px rgba(0, 255, 136, 0.3);
+}
+
+.light-theme .hologram-btn {
+    box-shadow: 0 2px 10px rgba(0, 255, 136, 0.2);
+}
+
+.light-theme .hologram-btn:hover {
+    box-shadow: 0 4px 20px rgba(0, 255, 136, 0.4);
+}
+
+/* Theme-specific timeline effects */
+.light-theme .timeline-line {
+    background: linear-gradient(to bottom, var(--primary-quantum), var(--secondary-quantum));
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+.light-theme .timeline-item::before {
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+}
+
+/* Theme-specific portfolio overlay */
+.light-theme .portfolio-overlay {
+    background: linear-gradient(transparent, rgba(255, 255, 255, 0.95));
+    color: var(--text-primary);
+}
+
+.light-theme .tag {
+    background: rgba(0, 0, 0, 0.1);
+    color: var(--text-primary);
+}
+
+/* Theme-specific status indicators */
+.light-theme .status-dot.active {
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.6);
+}
+
+.light-theme .quantum-dot {
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+}
+
+.light-theme .quantum-dot::before {
+    border-color: rgba(0, 255, 136, 0.4);
+}
+
+/* Accessibility themes */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-quantum: #00ff00;
+        --secondary-quantum: #ffff00;
+        --tertiary-quantum: #00ffff;
+        --text-primary: #ffffff;
+        --bg-primary: #000000;
+        --glass-border: rgba(255, 255, 255, 0.8);
+    }
+    
+    .floating-card,
+    .quantum-card,
+    .glass-morphism {
+        border: 2px solid #ffffff;
+        background: rgba(0, 0, 0, 0.8);
+    }
+    
+    .quantum-btn,
+    .hologram-btn {
+        border: 2px solid #00ff00;
+        font-weight: bold;
+    }
+}
+
+/* Reduced motion theme adjustments */
+@media (prefers-reduced-motion: reduce) {
+    .glitch-text::before,
+    .glitch-text::after,
+    .hologram-text::before,
+    .particle,
+    .neural-node,
+    .neural-connections {
+        animation: none !important;
+    }
+    
+    .neon-text {
+        animation: none !important;
+        text-shadow: 0 0 5px var(--primary-quantum);
+    }
+    
+    .floating {
+        animation: none !important;
+    }
+    
+    .quantum-dot,
+    .quantum-dot::before {
+        animation: none !important;
+    }
+}
+
+/* Theme-specific focus styles */
+.light-theme :focus {
+    outline: 2px solid var(--primary-quantum);
+    outline-offset: 2px;
+    background: rgba(0, 255, 136, 0.1);
+}
+
+.dark-theme :focus {
+    outline: 2px solid var(--primary-quantum);
+    outline-offset: 2px;
+    background: rgba(0, 255, 136, 0.1);
+}
+
+/* Theme-specific selection */
+.light-theme ::selection {
+    background: rgba(0, 255, 136, 0.3);
+    color: var(--text-primary);
+}
+
+.dark-theme ::selection {
+    background: var(--primary-quantum);
+    color: var(--bg-primary);
+}
+
+/* Print theme overrides */
+@media print {
+    * {
+        background: white !important;
+        color: black !important;
+        text-shadow: none !important;
+        box-shadow: none !important;
+    }
+    
+    .gradient-text,
+    .neon-text,
+    .glitch-text,
+    .hologram-text {
+        color: black !important;
+        -webkit-text-fill-color: black !important;
+    }
+}
+
+/* Theme transition utilities */
+.theme-fade-in {
+    opacity: 0;
+    animation: theme-fade-in 0.5s ease-out forwards;
+}
+
+@keyframes theme-fade-in {
+    to { opacity: 1; }
+}
+
+.theme-slide-in {
+    transform: translateY(20px);
+    opacity: 0;
+    animation: theme-slide-in 0.5s ease-out forwards;
+}
+
+@keyframes theme-slide-in {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Custom theme variables for special effects */
+.cyber-theme {
+    --primary-quantum: #00ff41;
+    --secondary-quantum: #ff0080;
+    --tertiary-quantum: #0080ff;
+    
+    --neon-cyan: #00ffff;
+    --neon-magenta: #ff00ff;
+    --neon-yellow: #ffff00;
+    --neon-green: #00ff41;
+    --neon-orange: #ff4500;
+    --neon-purple: #8a2be2;
+    
+    --bg-primary: #000815;
+    --bg-secondary: #001122;
+    --bg-tertiary: #002244;
+}
+
+.retro-theme {
+    --primary-quantum: #ff6b35;
+    --secondary-quantum: #f7931e;
+    --tertiary-quantum: #ffcc02;
+    
+    --bg-primary: #2d1b69;
+    --bg-secondary: #11052c;
+    --bg-tertiary: #3c096c;
+    
+    --text-primary: #ffffff;
+    --text-secondary: #e0aaff;
+}
+
+.matrix-theme {
+    --primary-quantum: #00ff41;
+    --secondary-quantum: #008f11;
+    --tertiary-quantum: #39ff14;
+    
+    --bg-primary: #000000;
+    --bg-secondary: #001100;
+    --bg-tertiary: #002200;
+    
+    --text-primary: #00ff41;
+    --text-secondary: #00cc33;
+    --text-tertiary: #008822;
+}
+
+/* Theme animation for smooth transitions */
+.theme-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Seasonal theme adjustments (can be triggered via JavaScript) */
+.winter-theme {
+    --primary-quantum: #87ceeb;
+    --secondary-quantum: #4682b4;
+    --tertiary-quantum: #b0e0e6;
+}
+
+.spring-theme {
+    --primary-quantum: #98fb98;
+    --secondary-quantum: #32cd32;
+    --tertiary-quantum: #90ee90;
+}
+
+.summer-theme {
+    --primary-quantum: #ffd700;
+    --secondary-quantum: #ff8c00;
+    --tertiary-quantum: #ff6347;
+}
+
+.autumn-theme {
+    --primary-quantum: #ff8c00;
+    --secondary-quantum: #dc143c;
+    --tertiary-quantum: #b22222;
+}
