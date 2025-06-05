@@ -834,7 +834,8 @@
 .social-quantum {
     display: flex;
     gap: var(--space-md);
-    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .social-link {
