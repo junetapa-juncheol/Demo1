@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="박준철(Junetapa) - 혁신을 선도하는 IT 전문가. 20년+ 경험으로 미래를 설계합니다.">
+    <meta name="keywords" content="IT 혁신, 박준철, Junetapa, 디지털 트랜스포메이션, 기술 리더십">
+    <title>Junetapa | 혁신을 통한 IT 리더십</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/themes.css">
+</head>
+<body class="dark-theme loading">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-container">
+            <div class="neural-loader">
+                <div class="neural-node"></div>
+                <div class="neural-node"></div>
+                <div class="neural-node"></div>
+                <div class="neural-node"></div>
+                <div class="neural-connections"></div>
+            </div>
+            <div class="loading-text">
+                <span class="loading-word">혁신</span>
+                <span class="loading-word">INNOVATION</span>
+                <span class="loading-word">기술</span>
+                <span class="loading-word">TECHNOLOGY</span>
+            </div>
+            <div class="loading-progress">
+                <div class="progress-bar"></div>
+                <span class="progress-percent">0%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cursor Follower -->
+    <div id="cursor-follower">
+        <div class="cursor-inner"></div>
+        <div class="cursor-outer"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar glass-morphism">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-3d">
+                    <canvas id="logo-canvas"></canvas>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-main">JUNETAPA</span>
+                    <span class="logo-sub">Innovation Leader</span>
+                </div>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link" data-text="Home">홈</a></li>
+                <li><a href="#vision" class="nav-link" data-text="Vision">비전</a></li>
+                <li><a href="#innovation" class="nav-link" data-text="Innovation">혁신</a></li>
+                <li><a href="#expertise" class="nav-link" data-text="Expertise">전문성</a></li>
+                <li><a href="#portfolio" class="nav-link" data-text="Portfolio">포트폴리오</a></li>
+                <li><a href="#future" class="nav-link" data-text="Future">미래</a></li>
+                <li><a href="#contact" class="nav-link" data-text="Contact">연락</a></li>
+            </ul>
+
+            <div class="nav-controls">
+                <button class="theme-toggle" aria-label="테마 변경">
+                    <div class="toggle-inner">
+                        <span class="sun-icon">☀️</span>
+                        <span class="moon-icon">🌙</span>
+                    </div>
+                </button>
+                <button class="hamburger" aria-label="메뉴 열기">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-3d-bg">
+            <canvas id="hero-canvas"></canvas>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-badge floating">
+                <span class="badge-icon">🚀</span>
+                <span>혁신의 여정이 시작됩니다</span>
+            </div>
+            
+            <h1 class="hero-title">
+                <span class="title-line">
+                    <span class="glitch-text" data-text="INNOVATION">INNOVATION</span>
+                </span>
+                <span class="title-line">
+                    <span class="hologram-text">THROUGH</span>
+                </span>
+                <span class="title-line">
+                    <span class="neon-text">TECHNOLOGY</span>
+                </span>
+            </h1>
+            
+            <div class="hero-subtitle">
+                <div class="typewriter-container">
+                    <span id="typewriter-text"></span>
+                    <span class="cursor-blink">|</span>
+                </div>
+            </div>
+
+            <div class="hero-stats-3d">
+                <div class="stat-card glass-morphism" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-icon">💡</div>
+                    <div class="stat-content">
+                        <span class="stat-number counter">20</span>
+                        <span class="stat-suffix">+</span>
+                        <span class="stat-label">Years Innovation</span>
+                    </div>
+                </div>
+                <div class="stat-card glass-morphism" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-icon">⚡</div>
+                    <div class="stat-content">
+                        <span class="stat-number counter">1000</span>
+                        <span class="stat-suffix">+</span>
+                        <span class="stat-label">Solutions Delivered</span>
+                    </div>
+                </div>
+                <div class="stat-card glass-morphism" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-icon">🌐</div>
+                    <div class="stat-content">
+                        <span class="stat-number counter">150</span>
+                        <span class="stat-suffix">+</span>
+                        <span class="stat-label">Networks Managed</span>
+                    </div>
+                </div>
+                <div class="stat-card glass-morphism" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-icon">🚀</div>
+                    <div class="stat-content">
+                        <span class="stat-number counter">∞</span>
+                        <span class="stat-suffix"></span>
+                        <span class="stat-label">Future Possibilities</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-cta">
+                <button class="cta-primary quantum-btn" data-text="혁신 여정 시작하기">
+                    <span class="btn-text">혁신 여정 시작하기</span>
+                    <div class="quantum-ripple"></div>
+                </button>
+                <button class="cta-secondary hologram-btn" data-text="포트폴리오 탐험">
+                    <span class="btn-text">포트폴리오 탐험</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <div class="scroll-dot"></div>
+            <span class="scroll-text">Scroll to Innovate</span>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision" class="vision">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-bg">VISION</span>
+                    <span class="title-main">미래를 설계하는 비전</span>
+                </h2>
+                <p class="section-subtitle">기술과 혁신이 만나는 지점에서 새로운 가능성을 창조합니다</p>
+            </div>
+
+            <div class="vision-grid">
+                <div class="vision-card floating-card" data-tilt>
+                    <div class="vision-icon">
+                        <div class="icon-3d">🔮</div>
+                    </div>
+                    <h3>Future Vision</h3>
+                    <p>미래 기술 트렌드를 예측하고 선도하는 혁신적 사고</p>
+                    <div class="card-glow"></div>
+                </div>
+                
+                <div class="vision-card floating-card" data-tilt>
+                    <div class="vision-icon">
+                        <div class="icon-3d">🌟</div>
+                    </div>
+                    <h3>Digital Transformation</h3>
+                    <p>디지털 전환을 통한 비즈니스 혁신과 가치 창출</p>
+                    <div class="card-glow"></div>
+                </div>
+                
+                <div class="vision-card floating-card" data-tilt>
+                    <div class="vision-icon">
+                        <div class="icon-3d">⚡</div>
+                    </div>
+                    <h3>Agile Innovation</h3>
+                    <p>빠르고 유연한 혁신으로 변화하는 시장을 리드</p>
+                    <div class="card-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Innovation Timeline -->
+    <section id="innovation" class="innovation">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-bg">INNOVATION</span>
+                    <span class="title-main">혁신의 여정</span>
+                </h2>
+                <p class="section-subtitle">20년간의 기술 혁신 스토리</p>
+            </div>
+
+            <div class="timeline-3d">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-year">1993-2001</div>
+                    <div class="timeline-content glass-morphism">
+                        <div class="timeline-icon">🔧</div>
+                        <h3>호기심의 시작</h3>
+                        <p>12살 컴퓨터 학원에서의 운명적 만남. 기술에 대한 무한한 호기심이 혁신의 씨앗이 되다.</p>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">Hardware</span>
+                            <span class="tech-tag">Assembly</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-year">2001-2007</div>
+                    <div class="timeline-content glass-morphism">
+                        <div class="timeline-icon">⚙️</div>
+                        <h3>전문가의 첫걸음</h3>
+                        <p>컴퓨터 조립 전문가로 IT 업계 진출. 기술과 비즈니스의 교차점 발견.</p>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">PC Building</span>
+                            <span class="tech-tag">Networking</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-year">2007-2015</div>
+                    <div class="timeline-content glass-morphism">
+                        <div class="timeline-icon">🚀</div>
+                        <h3>혁신 가속화</h3>
+                        <p>IT 솔루션 전문가로 성장. 전국 네트워크 구축과 대규모 프로젝트 성공.</p>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">Solution</span>
+                            <span class="tech-tag">Scale-up</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-year">2016-2024</div>
+                    <div class="timeline-content glass-morphism">
+                        <div class="timeline-icon">🌟</div>
+                        <h3>디지털 혁신 리더</h3>
+                        <p>AI, IoT, 스마트 솔루션 개발. 디지털 트랜스포메이션의 선봉장으로 활약.</p>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">AI/ML</span>
+                            <span class="tech-tag">IoT</span>
+                            <span class="tech-tag">Cloud</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-year">2025+</div>
+                    <div class="timeline-content glass-morphism future-card">
+                        <div class="timeline-icon">🔮</div>
+                        <h3>미래 혁신</h3>
+                        <p>차세대 기술로 새로운 패러다임 창조. 혁신의 여정은 계속됩니다.</p>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">Quantum</span>
+                            <span class="tech-tag">Metaverse</span>
+                            <span class="tech-tag">Infinity</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Matrix -->
+    <section id="expertise" class="expertise">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-bg">EXPERTISE</span>
+                    <span class="title-main">핵심 전문 역량</span>
+                </h2>
+                <p class="section-subtitle">다차원적 기술 전문성으로 혁신을 실현합니다</p>
+            </div>
+
+            <div class="expertise-matrix">
+                <div class="skill-hexagon" data-skill="95">
+                    <div class="hexagon-content">
+                        <div class="skill-icon">🔧</div>
+                        <h3>인프라 설계</h3>
+                        <div class="skill-progress">
+                            <svg class="progress-ring" width="120" height="120">
+                                <circle class="progress-ring-circle" stroke="#00ff88" stroke-width="4" fill="transparent" r="52" cx="60" cy="60"/>
+                            </svg>
+                            <div class="skill-percent">95%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-hexagon" data-skill="90">
+                    <div class="hexagon-content">
+                        <div class="skill-icon">💼</div>
+                        <h3>기술영업</h3>
+                        <div class="skill-progress">
+                            <svg class="progress-ring" width="120" height="120">
+                                <circle class="progress-ring-circle" stroke="#ff6b35" stroke-width="4" fill="transparent" r="52" cx="60" cy="60"/>
+                            </svg>
+                            <div class="skill-percent">90%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-hexagon" data-skill="88">
+                    <div class="hexagon-content">
+                        <div class="skill-icon">🎯</div>
+                        <h3>프로젝트 관리</h3>
+                        <div class="skill-progress">
+                            <svg class="progress-ring" width="120" height="120">
+                                <circle class="progress-ring-circle" stroke="#4ecdc4" stroke-width="4" fill="transparent" r="52" cx="60" cy="60"/>
+                            </svg>
+                            <div class="skill-percent">88%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-hexagon" data-skill="85">
+                    <div class="hexagon-content">
+                        <div class="skill-icon">🎨</div>
+                        <h3>디지털 혁신</h3>
+                        <div class="skill-progress">
+                            <svg class="progress-ring" width="120" height="120">
+                                <circle class="progress-ring-circle" stroke="#a8e6cf" stroke-width="4" fill="transparent" r="52" cx="60" cy="60"/>
+                            </svg>
+                            <div class="skill-percent">85%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-hexagon" data-skill="92">
+                    <div class="hexagon-content">
+                        <div class="skill-icon">🧠</div>
+                        <h3>AI/ML 솔루션</h3>
+                        <div class="skill-progress">
+                            <svg class="progress-ring" width="120" height="120">
+                                <circle class="progress-ring-circle" stroke="#ff8b94" stroke-width="4" fill="transparent" r="52" cx="60" cy="60"/>
+                            </svg>
+                            <div class="skill-percent">92%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-hexagon" data-skill="87">
+                    <div class="hexagon-content">
+                        <div class="skill-icon">🌐</div>
+                        <h3>클라우드 아키텍처</h3>
+                        <div class="skill-progress">
+                            <svg class="progress-ring" width="120" height="120">
+                                <circle class="progress-ring-circle" stroke="#b4a7d6" stroke-width="4" fill="transparent" r="52" cx="60" cy="60"/>
+                            </svg>
+                            <div class="skill-percent">87%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Showcase -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-bg">PORTFOLIO</span>
+                    <span class="title-main">혁신 포트폴리오</span>
+                </h2>
+                <p class="section-subtitle">실제 혁신 사례들을 3D 환경에서 체험해보세요</p>
+            </div>
+
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">전체</button>
+                <button class="filter-btn" data-filter="infrastructure">인프라</button>
+                <button class="filter-btn" data-filter="sales">영업솔루션</button>
+                <button class="filter-btn" data-filter="innovation">혁신기술</button>
+                <button class="filter-btn" data-filter="ai">AI/ML</button>
+            </div>
+
+            <div class="portfolio-3d-grid">
+                <div class="portfolio-item floating-card" data-category="infrastructure">
+                    <div class="portfolio-image">
+                        <img src="img/교육지원청 전산유지보수.png" alt="교육청 인프라 혁신">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>교육청 IT 인프라 혁신</h3>
+                                <p>1,300대 규모의 스마트 교육 환경 구축</p>
+                                <div class="portfolio-tags">
+                                    <span class="tag">인프라</span>
+                                    <span class="tag">스케일링</span>
+                                    <span class="tag">교육기술</span>
+                                </div>
+                                <button class="portfolio-btn">자세히 보기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item floating-card" data-category="innovation">
+                    <div class="portfolio-image">
+                        <img src="img/스마트미러 OEM 개발.png" alt="스마트미러 OEM">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>스마트미러 OEM 혁신</h3>
+                                <p>IoT 기반 맞춤형 솔루션 개발</p>
+                                <div class="portfolio-tags">
+                                    <span class="tag">IoT</span>
+                                    <span class="tag">OEM</span>
+                                    <span class="tag">스마트</span>
+                                </div>
+                                <button class="portfolio-btn">자세히 보기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item floating-card" data-category="infrastructure">
+                    <div class="portfolio-image">
+                        <img src="img/대학병원 정보보호팀.png" alt="병원 보안시스템">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>병원 통합 보안 시스템</h3>
+                                <p>의료 환경 특화 보안 솔루션</p>
+                                <div class="portfolio-tags">
+                                    <span class="tag">보안</span>
+                                    <span class="tag">의료</span>
+                                    <span class="tag">통합관리</span>
+                                </div>
+                                <button class="portfolio-btn">자세히 보기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item floating-card" data-category="ai">
+                    <div class="portfolio-image">
+                        <img src="img/디지털 마케팅 혁신.png" alt="AI 마케팅 혁신">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>AI 기반 마케팅 혁신</h3>
+                                <p>1400명 네트워크 AI 자동화 구축</p>
+                                <div class="portfolio-tags">
+                                    <span class="tag">AI</span>
+                                    <span class="tag">마케팅</span>
+                                    <span class="tag">자동화</span>
+                                </div>
+                                <button class="portfolio-btn">자세히 보기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item floating-card" data-category="sales">
+                    <div class="portfolio-image">
+                        <img src="img/디지털 마케팅 혁신.png" alt="B2B 플랫폼">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>B2B 통합 플랫폼</h3>
+                                <p>영업 프로세스 디지털 혁신</p>
+                                <div class="portfolio-tags">
+                                    <span class="tag">B2B</span>
+                                    <span class="tag">플랫폼</span>
+                                    <span class="tag">자동화</span>
+                                </div>
+                                <button class="portfolio-btn">자세히 보기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item floating-card" data-category="innovation">
+                    <div class="portfolio-image">
+                        <img src="img/기술영업.png" alt="양자컴퓨팅 연구">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>양자컴퓨팅 응용 연구</h3>
+                                <p>차세대 컴퓨팅 기술 선행 연구</p>
+                                <div class="portfolio-tags">
+                                    <span class="tag">양자</span>
+                                    <span class="tag">연구</span>
+                                    <span class="tag">미래기술</span>
+                                </div>
+                                <button class="portfolio-btn">자세히 보기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Vision -->
+    <section id="future" class="future">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-bg">FUTURE</span>
+                    <span class="title-main">미래 기술 로드맵</span>
+                </h2>
+                <p class="section-subtitle">다가올 혁신을 미리 경험해보세요</p>
+            </div>
+
+            <div class="future-roadmap">
+                <div class="roadmap-timeline">
+                    <div class="roadmap-item" data-year="2025">
+                        <div class="roadmap-content glass-morphism">
+                            <h3>양자컴퓨팅 시대</h3>
+                            <p>양자 알고리즘 기반 최적화 솔루션</p>
+                            <div class="roadmap-tech">🔬 Quantum Computing</div>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-item" data-year="2026">
+                        <div class="roadmap-content glass-morphism">
+                            <h3>완전 자율 시스템</h3>
+                            <p>AI 기반 자율 운영 인프라 구축</p>
+                            <div class="roadmap-tech">🤖 Autonomous AI</div>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-item" data-year="2027">
+                        <div class="roadmap-content glass-morphism">
+                            <h3>메타버스 플랫폼</h3>
+                            <p>가상현실 업무환경 혁신</p>
+                            <div class="roadmap-tech">🌐 Metaverse</div>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-item" data-year="2030">
+                        <div class="roadmap-content glass-morphism">
+                            <h3>뇌-컴퓨터 인터페이스</h3>
+                            <p>생각으로 제어하는 시스템</p>
+                            <div class="roadmap-tech">🧠 BCI Technology</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Quantum -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-bg">CONTACT</span>
+                    <span class="title-main">혁신 파트너십 시작</span>
+                </h2>
+                <p class="section-subtitle">함께 미래를 만들어갈 파트너를 찾고 있습니다</p>
+            </div>
+
+            <div class="contact-quantum">
+                <div class="contact-info">
+                    <div class="quantum-card glass-morphism">
+                        <div class="card-header">
+                            <h3>직접 연결</h3>
+                            <div class="quantum-dot"></div>
+                        </div>
+                        <div class="contact-items">
+                            <div class="contact-item">
+                                <div class="contact-icon">📧</div>
+                                <div class="contact-details">
+                                    <h4>이메일</h4>
+                                    <p>jun22sky@nate.com</p>
+                                    <span>혁신 제안 24시간 대기</span>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">📱</div>
+                                <div class="contact-details">
+                                    <h4>텔레포트</h4>
+                                    <p>010-****-3888</p>
+                                    <span>즉시 연결 가능</span>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">🌐</div>
+                                <div class="contact-details">
+                                    <h4>디지털 본부</h4>
+                                    <p>서울시 종로구</p>
+                                    <span>글로벌 네트워크 허브</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quantum-card glass-morphism">
+                        <div class="card-header">
+                            <h3>혁신 지표</h3>
+                            <div class="quantum-dot active"></div>
+                        </div>
+                        <div class="innovation-metrics">
+                            <div class="metric-item">
+                                <div class="metric-icon">⚡</div>
+                                <div class="metric-content">
+                                    <span class="metric-value counter">99.9</span>
+                                    <span class="metric-unit">%</span>
+                                    <span class="metric-label">시스템 안정성</span>
+                                </div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-icon">🚀</div>
+                                <div class="metric-content">
+                                    <span class="metric-value counter">300</span>
+                                    <span class="metric-unit">%</span>
+                                    <span class="metric-label">효율성 향상</span>
+                                </div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-icon">💡</div>
+                                <div class="metric-content">
+                                    <span class="metric-value counter">24</span>
+                                    <span class="metric-unit">/7</span>
+                                    <span class="metric-label">혁신 모니터링</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-quantum">
+                    <form class="quantum-form" id="quantumContactForm">
+                        <div class="form-header">
+                            <h3>혁신 프로젝트 시작</h3>
+                            <div class="form-energy-bar">
+                                <div class="energy-fill"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-groups">
+                            <div class="form-group floating-label">
+                                <input type="text" id="name" name="name" required>
+                                <label for="name">혁신 파트너 이름</label>
+                                <div class="field-glow"></div>
+                            </div>
+
+                            <div class="form-group floating-label">
+                                <input type="email" id="email" name="email" required>
+                                <label for="email">디지털 연결점</label>
+                                <div class="field-glow"></div>
+                            </div>
+
+                            <div class="form-group floating-label">
+                                <input type="text" id="company" name="company">
+                                <label for="company">혁신 조직</label>
+                                <div class="field-glow"></div>
+                            </div>
+
+                            <div class="form-group floating-label">
+                                <select id="project-type" name="project-type" required>
+                                    <option value="">혁신 유형 선택</option>
+                                    <option value="infrastructure">인프라 혁신</option>
+                                    <option value="ai-solution">AI 솔루션</option>
+                                    <option value="digital-transformation">디지털 전환</option>
+                                    <option value="quantum-computing">양자컴퓨팅</option>
+                                    <option value="consulting">혁신 컨설팅</option>
+                                </select>
+                                <label for="project-type">프로젝트 유형</label>
+                                <div class="field-glow"></div>
+                            </div>
+
+                            <div class="form-group floating-label">
+                                <textarea id="message" name="message" rows="4" required></textarea>
+                                <label for="message">혁신 아이디어</label>
+                                <div class="field-glow"></div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="quantum-submit-btn">
+                            <span class="btn-text">혁신 시작하기</span>
+                            <div class="btn-quantum-effect"></div>
+                            <div class="btn-particles"></div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Infinity -->
+    <footer class="footer-infinity">
+        <div class="footer-bg">
+            <canvas id="footer-canvas"></canvas>
+        </div>
+        
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="brand-logo">
+                        <div class="logo-quantum">JUNETAPA</div>
+                        <div class="logo-tagline">Innovation Never Ends</div>
+                    </div>
+                    <p class="brand-description">
+                        기술과 혁신이 만나는 지점에서<br>
+                        새로운 미래를 창조합니다
+                    </p>
+                    <div class="social-quantum">
+                        <a href="https://blog.naver.com/jun22sky" class="social-link" data-platform="naver">
+                            <div class="social-icon">📝</div>
+                            <span>네이버</span>
+                        </a>
+                        <a href="https://www.instagram.com/junetapa/" class="social-link" data-platform="instagram">
+                            <div class="social-icon">📸</div>
+                            <span>인스타</span>
+                        </a>
+                        <a href="https://www.tiktok.com/@junetapa0" class="social-link" data-platform="tiktok">
+                            <div class="social-icon">🎵</div>
+                            <span>틱톡</span>
+                        </a>
+                        <a href="https://youtube.com/@junetapa" class="social-link" data-platform="youtube">
+                            <div class="social-icon">📺</div>
+                            <span>유튜브</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-nav">
+                    <div class="nav-column">
+                        <h4>혁신 영역</h4>
+                        <ul>
+                            <li><a href="#infrastructure">인프라 설계</a></li>
+                            <li><a href="#ai-solutions">AI 솔루션</a></li>
+                            <li><a href="#digital-transform">디지털 전환</a></li>
+                            <li><a href="#quantum-tech">양자 기술</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="nav-column">
+                        <h4>기술 포트폴리오</h4>
+                        <ul>
+                            <li><a href="#portfolio">프로젝트 갤러리</a></li>
+                            <li><a href="#case-studies">혁신 사례</a></li>
+                            <li><a href="#tech-blog">기술 블로그</a></li>
+                            <li><a href="#innovation-lab">혁신 연구소</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="nav-column">
+                        <h4>파트너십</h4>
+                        <ul>
+                            <li><a href="#contact">혁신 파트너</a></li>
+                            <li><a href="#consulting">기술 컨설팅</a></li>
+                            <li><a href="#collaboration">협업 제안</a></li>
+                            <li><a href="#future-projects">미래 프로젝트</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2025 박준철 (Junetapa). 모든 혁신은 계속됩니다.</p>
+                    <p class="innovation-quote">"Innovation is not just technology, it's about creating the future."</p>
+                </div>
+                
+                <div class="footer-status">
+                    <div class="status-indicator">
+                        <div class="status-dot active"></div>
+                        <span>혁신 시스템 가동 중</span>
+                    </div>
+                    <div class="quantum-time">
+                        <span id="quantum-clock">00:00:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/core/engine.js"></script>
+    <script src="js/core/quantum.js"></script>
+    <script src="js/components/navigation.js"></script>
+    <script src="js/components/animations.js"></script>
+    <script src="js/components/3d-effects.js"></script>
+    <script src="js/sections/hero.js"></script>
+    <script src="js/sections/portfolio.js"></script>
+    <script src="js/sections/contact.js"></script>
+    <script src="js/utils/particles.js"></script>
+    <script src="js/utils/interactions.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
