@@ -211,7 +211,22 @@ class JunetapaApp {
     }
 
     initializeCursor() {
+        // 모바일 디바이스 체크
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) 
+                        || window.innerWidth <= 768 
+                        || 'ontouchstart' in window;
+        
         const cursor = document.getElementById('cursor-follower');
+        
+        // 모바일에서는 커서 숨기기
+        if (isMobile) {
+            if (cursor) {
+                cursor.style.display = 'none';
+            }
+            return;
+        }
+        
+        // 데스크탑에서만 커서 효과 적용
         const cursorInner = cursor.querySelector('.cursor-inner');
         const cursorOuter = cursor.querySelector('.cursor-outer');
         
