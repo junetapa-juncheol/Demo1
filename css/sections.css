@@ -98,7 +98,7 @@
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
-/* Hero Section */
+/* Hero Section - Skelter Style */
 .hero {
     position: relative;
     min-height: var(--hero-min-height);
@@ -107,9 +107,8 @@
     justify-content: center;
     overflow: hidden;
     background: 
-        linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.9) 100%),
-        url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1920&h=1080') center/cover;
-    background-attachment: fixed;
+        linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    border-bottom: 1px solid var(--glass-border);
 }
 
 .hero-3d-bg {
@@ -219,7 +218,7 @@
     font-size: var(--font-3xl);
     font-weight: var(--weight-black);
     font-family: var(--font-display);
-    color: var(--primary-quantum);
+    color: var(--primary-blue);
     line-height: 1;
 }
 
@@ -443,9 +442,9 @@
 
 .filter-btn.active,
 .filter-btn:hover {
-    background: var(--primary-quantum);
+    background: var(--primary-blue);
     color: var(--bg-primary);
-    box-shadow: var(--shadow-neon);
+    box-shadow: var(--shadow-tech);
     transform: translateY(-2px);
 }
 
@@ -526,7 +525,7 @@
 }
 
 .portfolio-btn {
-    background: var(--primary-quantum);
+    background: var(--primary-blue);
     color: var(--bg-primary);
     padding: var(--space-sm) var(--space-lg);
     border-radius: var(--radius-lg);
@@ -536,7 +535,7 @@
 }
 
 .portfolio-btn:hover {
-    background: var(--secondary-quantum);
+    background: var(--accent-bright);
     transform: translateY(-2px);
 }
 
@@ -883,9 +882,9 @@
 }
 
 .social-link:hover {
-    color: var(--primary-quantum);
+    color: var(--primary-blue);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-neon);
+    box-shadow: var(--shadow-tech);
 }
 
 .social-icon {
@@ -902,7 +901,7 @@
     font-size: var(--font-lg);
     font-weight: var(--weight-bold);
     margin-bottom: var(--space-md);
-    color: var(--primary-quantum);
+    color: var(--primary-blue);
 }
 
 .nav-column ul {
@@ -917,7 +916,7 @@
 }
 
 .nav-column a:hover {
-    color: var(--primary-quantum);
+    color: var(--primary-blue);
 }
 
 .footer-bottom {
@@ -949,7 +948,7 @@
 .quantum-time {
     font-family: var(--font-display);
     font-size: var(--font-lg);
-    color: var(--primary-quantum);
+    color: var(--primary-blue);
 } var(--radius-sm);
     margin: var(--space-xl) auto 0;
     position: relative;
@@ -990,7 +989,7 @@
     transform: translate(-50%, -50%);
 }
 
-/* Navigation */
+/* Navigation - Skelter Style */
 .navbar {
     position: fixed;
     top: 0;
@@ -1000,9 +999,10 @@
     z-index: var(--z-fixed);
     transition: all var(--transition-normal);
     padding: 0 var(--space-lg);
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-sm);
 }
 
 .nav-container {
@@ -1034,13 +1034,13 @@
     font-family: var(--font-display);
     font-weight: var(--weight-black);
     font-size: var(--font-xl);
-    color: #007bff;
+    color: var(--primary-blue);
     line-height: 1;
 }
 
 .logo-sub {
     font-size: var(--font-xs);
-    color: #666;
+    color: var(--text-tertiary);
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -1061,11 +1061,11 @@
     position: relative;
     width: 60px;
     height: 30px;
-    background: #f0f0f0;
+    background: var(--bg-tertiary);
     border-radius: 15px;
     cursor: pointer;
     transition: all var(--transition-normal);
-    border: 1px solid #ddd;
+    border: 1px solid var(--glass-border);
 }
 
 .toggle-inner {
@@ -1074,7 +1074,7 @@
     left: 3px;
     width: 24px;
     height: 24px;
-    background: #007bff;
+    background: var(--primary-blue);
     border-radius: 50%;
     transition: all var(--transition-normal);
     display: flex;
