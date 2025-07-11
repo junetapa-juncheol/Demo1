@@ -83,6 +83,12 @@ class JunetapaApp {
             this.navigation.init();
         }
         
+        // Initialize image loader
+        if (window.ImageLoader) {
+            this.imageLoader = new ImageLoader();
+            this.imageLoader.initializeAll();
+        }
+        
         // Initialize animations
         if (window.AnimationController) {
             this.animationController = new AnimationController();
