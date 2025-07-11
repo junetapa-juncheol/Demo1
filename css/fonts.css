@@ -1,0 +1,239 @@
+/* css/fonts.css */
+/* Local Font Definitions */
+
+/* Orbitron Font Family */
+@font-face {
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/orbitron-regular.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../fonts/orbitron-bold.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('../fonts/orbitron-black.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Noto Sans KR Font Family */
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url('../fonts/noto-sans-kr-light.woff2') format('woff2');
+    unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7AF, U+D7B0-D7FF;
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('../fonts/noto-sans-kr-light.woff2') format('woff2');
+    unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7AF, U+D7B0-D7FF;
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/noto-sans-kr-regular.woff2') format('woff2');
+    unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7AF, U+D7B0-D7FF;
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('../fonts/noto-sans-kr-regular.woff2') format('woff2');
+    unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7AF, U+D7B0-D7FF;
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../fonts/noto-sans-kr-bold.woff2') format('woff2');
+    unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7AF, U+D7B0-D7FF;
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('../fonts/noto-sans-kr-bold.woff2') format('woff2');
+    unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7AF, U+D7B0-D7FF;
+}
+
+/* Space Grotesk Font Family */
+@font-face {
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('../fonts/space-grotesk-light.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/space-grotesk-regular.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('../fonts/space-grotesk-regular.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('../fonts/space-grotesk-bold.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../fonts/space-grotesk-bold.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Font Fallback Stack */
+:root {
+    --font-orbitron: 'Orbitron', 'Courier New', monospace;
+    --font-noto-sans-kr: 'Noto Sans KR', 'Malgun Gothic', '맑은 고딕', sans-serif;
+    --font-space-grotesk: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Preload Critical Fonts */
+.font-preload {
+    font-family: var(--font-orbitron);
+    font-family: var(--font-noto-sans-kr);
+    font-family: var(--font-space-grotesk);
+    position: absolute;
+    left: -9999px;
+    visibility: hidden;
+}
+
+/* Font Loading Optimization */
+.font-loading {
+    font-family: system-ui, -apple-system, sans-serif;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.font-loaded {
+    opacity: 1;
+}
+
+/* Font Performance Optimization */
+@media (prefers-reduced-motion: reduce) {
+    .font-loading {
+        transition: none;
+    }
+}
+
+/* Network-aware font loading */
+@media (max-width: 768px) {
+    @font-face {
+        font-family: 'Orbitron';
+        font-style: normal;
+        font-weight: 400;
+        font-display: optional;
+        src: url('../fonts/orbitron-regular.woff2') format('woff2');
+    }
+    
+    @font-face {
+        font-family: 'Noto Sans KR';
+        font-style: normal;
+        font-weight: 400;
+        font-display: optional;
+        src: url('../fonts/noto-sans-kr-regular.woff2') format('woff2');
+    }
+    
+    @font-face {
+        font-family: 'Space Grotesk';
+        font-style: normal;
+        font-weight: 400;
+        font-display: optional;
+        src: url('../fonts/space-grotesk-regular.woff2') format('woff2');
+    }
+}
+
+/* Font Display Optimization */
+.critical-text {
+    font-display: swap;
+}
+
+.decorative-text {
+    font-display: optional;
+}
+
+/* Font Metrics for Better Layout Stability */
+.orbitron-text {
+    font-family: var(--font-orbitron);
+    font-feature-settings: 'kern' 1, 'liga' 1;
+    text-rendering: optimizeLegibility;
+}
+
+.noto-sans-kr-text {
+    font-family: var(--font-noto-sans-kr);
+    font-feature-settings: 'kern' 1;
+    text-rendering: optimizeSpeed;
+}
+
+.space-grotesk-text {
+    font-family: var(--font-space-grotesk);
+    font-feature-settings: 'kern' 1, 'liga' 1;
+    text-rendering: optimizeLegibility;
+}
+
+/* Font Size Adjustments for Better Readability */
+@media (max-width: 480px) {
+    .orbitron-text {
+        font-size: 0.9em;
+        line-height: 1.2;
+    }
+    
+    .noto-sans-kr-text {
+        font-size: 0.95em;
+        line-height: 1.4;
+    }
+    
+    .space-grotesk-text {
+        font-size: 0.95em;
+        line-height: 1.3;
+    }
+}

@@ -89,6 +89,11 @@ class JunetapaApp {
             this.imageLoader.initializeAll();
         }
         
+        // Initialize font loader
+        if (window.FontLoader) {
+            this.fontLoader = new FontLoader();
+        }
+        
         // Initialize animations
         if (window.AnimationController) {
             this.animationController = new AnimationController();
