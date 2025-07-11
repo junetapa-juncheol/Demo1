@@ -21,18 +21,11 @@
     <meta property="og:locale" content="ko_KR">
     <meta property="og:site_name" content="AI Robot Expert">
     
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AI 로봇 전문가 | 인공지능 로봇 혁신">
-    <meta name="twitter:description" content="AI 로봇 전문가 - 인공지능과 로봇 기술로 미래를 혁신합니다.">
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&h=630">
-    
     <!-- Canonical URL -->
     <link rel="canonical" href="https://ai-robot-expert.com">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
-    <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
     
     <title>AI 로봇 전문가 | 인공지능 로봇 혁신</title>
     
@@ -42,13 +35,10 @@
     <!-- Font Preload -->
     <link rel="preload" href="fonts/orbitron-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/noto-sans-kr-regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/space-grotesk-regular.woff2" as="font" type="font/woff2" crossorigin>
     
     <!-- External Libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/reset.css">
@@ -59,998 +49,347 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/themes.css">
     
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "AI Robot Expert",
-      "url": "https://ai-robot-expert.com",
-      "logo": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=200&h=200",
-      "description": "AI 로봇 전문가 - 인공지능과 로봇 기술로 미래를 혁신합니다. 스마트 로봇 솔루션 전문가.",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+82-10-0000-0000",
-        "contactType": "Customer Service",
-        "availableLanguage": ["Korean", "English"]
-      },
-      "sameAs": [
-        "https://facebook.com/airobotexpert",
-        "https://twitter.com/airobotexpert",
-        "https://linkedin.com/company/airobotexpert"
-      ],
-      "foundingDate": "2020",
-      "knowsAbout": [
-        "Artificial Intelligence",
-        "Robotics",
-        "Machine Learning",
-        "Deep Learning",
-        "Computer Vision",
-        "Natural Language Processing",
-        "Autonomous Systems"
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "AI Robot Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "휴머노이드 로봇 개발",
-              "description": "인공지능 기반 휴머노이드 로봇 설계 및 개발"
+    <!-- Custom Styles for Simple Portfolio -->
+    <style>
+        .hero-main {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+            color: white;
+            padding: 2rem;
+            max-width: 800px;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .features-section {
+            padding: 5rem 0;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .feature-description {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .social-link {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 50%;
+            line-height: 50px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-link:hover {
+            transform: scale(1.1);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
             }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "AI 서비스 로봇",
-              "description": "스마트 서비스 로봇 솔루션 개발"
-            }
-          }
-        ]
-      }
-    }
-    </script>
-</head>
-<body class="light-theme loading">
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="loader-container">
-            <div class="neural-loader">
-                <div class="neural-node"></div>
-                <div class="neural-node"></div>
-                <div class="neural-node"></div>
-                <div class="neural-node"></div>
-                <div class="neural-connections"></div>
-            </div>
-            <div class="loading-text">
-                <span class="loading-word">혁신</span>
-                <span class="loading-word">INNOVATION</span>
-                <span class="loading-word">기술</span>
-                <span class="loading-word">TECHNOLOGY</span>
-            </div>
-            <div class="loading-progress">
-                <div class="progress-bar"></div>
-                <span class="progress-percent">0%</span>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Navigation -->
-    <nav class="navbar glass-morphism">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <div class="logo-3d">
-                    <canvas id="logo-canvas"></canvas>
-                </div>
-                <div class="logo-text">
-                    <span class="logo-main">AI ROBOT</span>
-                    <span class="logo-sub">Future Intelligence</span>
-                </div>
-            </div>
             
-            <ul class="nav-menu">
-                <li><a href="#hero" class="nav-link" data-text="Home">Home</a></li>
-                <li><a href="#vision" class="nav-link" data-text="Vision">Vision</a></li>
-                <li><a href="#innovation" class="nav-link" data-text="Innovation">Innovation</a></li>
-                <li><a href="#expertise" class="nav-link" data-text="Expertise">Expertise</a></li>
-                <li><a href="#portfolio" class="nav-link" data-text="Portfolio">Portfolio</a></li>
-                <li><a href="#future" class="nav-link" data-text="Future">Future</a></li>
-                <li><a href="#updates" class="nav-link" data-text="Updates">Updates</a></li>
-                <li class="nav-dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-text="Sitemap">Sitemap</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#hero">🏠 홈</a></li>
-                        <li><a href="#vision">🔮 AI 로봇 비전</a></li>
-                        <li><a href="#innovation">⚡ AI 로봇 진화</a></li>
-                        <li><a href="#expertise">🧠 AI 로봇 기술</a></li>
-                        <li><a href="#portfolio">🤖 AI 로봇 프로젝트</a></li>
-                        <li><a href="#future">🚀 AI 로봇 미래</a></li>
-                        <li><a href="#updates">📅 업데이트</a></li>
-                        <li><a href="#contact">📞 AI 로봇 서비스</a></li>
-                    </ul>
-                </li>
-                <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
-            </ul>
-
-            <div class="nav-controls">
-                <button class="theme-toggle" aria-label="테마 변경">
-                    <div class="toggle-inner">
-                        <span class="sun-icon">☀️</span>
-                        <span class="moon-icon">🌙</span>
-                    </div>
-                </button>
-                <button class="hamburger" aria-label="메뉴 열기">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Background Canvas -->
-    <canvas id="bg-canvas"></canvas>
-
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="light-theme">
+    
     <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="hero-3d-bg">
-            <canvas id="hero-canvas"></canvas>
-        </div>
+    <section class="hero-main">
+        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1920&h=1080" 
+             alt="AI 로봇 기술 - 인공지능과 미래" 
+             class="hero-image" 
+             loading="lazy">
         
         <div class="hero-content">
-            <div class="hero-badge floating">
-                <span class="badge-icon">🤖</span>
-                <span>AI 로봇 시대가 시작됩니다</span>
-            </div>
+            <h1 class="hero-title">AI 로봇 전문가</h1>
+            <p class="hero-subtitle">인공지능과 로봇이 만나는 미래</p>
+            <p class="hero-description">
+                첨단 AI 기술과 로봇 공학을 결합하여 스마트한 자동화 솔루션을 제공합니다. 
+                인간과 로봇이 협력하는 새로운 시대를 함께 만들어가겠습니다.
+            </p>
+            <a href="#features" class="cta-button">AI 로봇 기술 살펴보기</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="section-title">핵심 AI 로봇 기술</h2>
+            <p class="section-subtitle">체계적인 AI 로봇 기술로 스마트 미래를 실현합니다</p>
             
-            <h1 class="hero-title">
-                <span class="title-line">
-                    <span class="glitch-text" data-text="AI ROBOT">AI ROBOT</span>
-                </span>
-                <span class="title-line">
-                    <span class="hologram-text">FUTURE</span>
-                </span>
-                <span class="title-line">
-                    <span class="neon-text">INTELLIGENCE</span>
-                </span>
-            </h1>
-            
-            <div class="hero-subtitle">
-                <div class="typewriter-container">
-                    <span id="typewriter-text"></span>
-                    <span class="cursor-blink">|</span>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">휴머노이드 로봇</h3>
+                    <p class="feature-description">
+                        인간과 유사한 형태와 움직임을 가진 지능형 휴머노이드 로봇 개발. 
+                        자연스러운 인간-로봇 상호작용을 통한 혁신적인 서비스 제공.
+                    </p>
                 </div>
-            </div>
-
-            <div class="hero-stats-3d">
-                <div class="stat-card glass-morphism" data-aos="fade-up" data-aos-delay="100">
-                    <div class="stat-icon">🤖</div>
-                    <div class="stat-content">
-                        <span class="stat-number counter">1000</span>
-                        <span class="stat-suffix">+</span>
-                        <span class="stat-label">AI Robots Created</span>
-                    </div>
-                </div>
-                <div class="stat-card glass-morphism" data-aos="fade-up" data-aos-delay="200">
-                    <div class="stat-icon">🧠</div>
-                    <div class="stat-content">
-                        <span class="stat-number counter">95</span>
-                        <span class="stat-suffix">%</span>
-                        <span class="stat-label">Intelligence Accuracy</span>
-                    </div>
-                </div>
-                <div class="stat-card glass-morphism" data-aos="fade-up" data-aos-delay="300">
-                    <div class="stat-icon">🔋</div>
-                    <div class="stat-content">
-                        <span class="stat-number counter">24</span>
-                        <span class="stat-suffix">/7</span>
-                        <span class="stat-label">Autonomous Operation</span>
-                    </div>
-                </div>
-                <div class="stat-card glass-morphism" data-aos="fade-up" data-aos-delay="400">
-                    <div class="stat-icon">✨</div>
-                    <div class="stat-content">
-                        <span class="stat-number counter">∞</span>
-                        <span class="stat-suffix"></span>
-                        <span class="stat-label">AI Evolution</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="hero-cta">
-                <button class="cta-primary quantum-btn" data-text="AI 로봇 체험하기">
-                    <span class="btn-text">AI 로봇 체험하기</span>
-                    <div class="quantum-ripple"></div>
-                </button>
-                <button class="cta-secondary hologram-btn" data-text="로봇 갤러리 탐험">
-                    <span class="btn-text">로봇 갤러리 탐험</span>
-                </button>
-            </div>
-        </div>
-
-        <div class="scroll-indicator">
-            <div class="scroll-line"></div>
-            <div class="scroll-dot"></div>
-            <span class="scroll-text">Scroll to Explore AI</span>
-        </div>
-    </section>
-
-    <!-- Vision Section -->
-    <section id="vision" class="vision">
-        <div class="container">
-            <header class="section-header">
-                <h2 class="section-title">
-                    <span class="title-bg">VISION</span>
-                    <span class="title-main">AI 로봇의 미래 비전</span>
-                </h2>
-                <p class="section-subtitle">인공지능과 로봇이 만나는 지점에서 새로운 미래를 창조합니다</p>
-            </header>
-
-            <div class="vision-grid">
-                <article class="vision-card floating-card" data-tilt>
-                    <div class="vision-icon">
-                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=400&h=300" alt="Intelligent Robotics - AI 로봇" class="vision-image" loading="lazy">
-                        <div class="icon-3d">🤖</div>
-                    </div>
-                    <h3>Intelligent Robotics</h3>
-                    <p>인공지능과 로봇이 융합된 스마트 자동화 시스템</p>
-                    <div class="card-glow"></div>
-                </article>
                 
-                <article class="vision-card floating-card" data-tilt>
-                    <div class="vision-icon">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&h=300" alt="Machine Learning - 머신러닝" class="vision-image" loading="lazy">
-                        <div class="icon-3d">🧠</div>
-                    </div>
-                    <h3>Machine Learning</h3>
-                    <p>딥러닝과 머신러닝을 통한 자율적 학습 시스템</p>
-                    <div class="card-glow"></div>
-                </article>
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3 class="feature-title">딥러닝 AI</h3>
+                    <p class="feature-description">
+                        최신 딥러닝과 뉴럴네트워크 기술을 활용한 지능형 AI 시스템. 
+                        복잡한 패턴 인식과 자율적 학습 능력으로 스마트한 의사결정 지원.
+                    </p>
+                </div>
                 
-                <article class="vision-card floating-card" data-tilt>
-                    <div class="vision-icon">
-                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=400&h=300" alt="Autonomous Systems - 자율 시스템" class="vision-image" loading="lazy">
-                        <div class="icon-3d">⚙️</div>
-                    </div>
-                    <h3>Autonomous Systems</h3>
-                    <p>완전 자율적인 작동을 통한 스마트 자동화 시스템</p>
-                    <div class="card-glow"></div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Innovation Timeline -->
-    <section id="innovation" class="innovation">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">
-                    <span class="title-bg">EVOLUTION</span>
-                    <span class="title-main">AI 로봇의 진화</span>
-                </h2>
-                <p class="section-subtitle">인공지능 로봇의 진화 스토리</p>
-            </div>
-
-            <div class="timeline-3d">
-                <div class="timeline-line"></div>
-                
-                <div class="timeline-item" data-aos="fade-right">
-                    <div class="timeline-year">1950-1960</div>
-                    <div class="timeline-content glass-morphism">
-                        <div class="timeline-icon">🤖</div>
-                        <h3>AI 로봇의 꿉샤</h3>
-                        <p>인공지능과 로봇의 초기 개념이 등장. 아이작 아시모프의 로봇 3법칙이 제정되다.</p>
-                        <div class="timeline-tech">
-                            <span class="tech-tag">AI Theory</span>
-                            <span class="tech-tag">Basic Robotics</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-aos="fade-left">
-                    <div class="timeline-year">1970-1990</div>
-                    <div class="timeline-content glass-morphism">
-                        <div class="timeline-icon">🧠</div>
-                        <h3>전문가 시스템 등장</h3>
-                        <p>전문가 시스템과 제어 이론의 발전. 산업용 로봇의 초기 형태가 나타나다.</p>
-                        <div class="timeline-tech">
-                            <span class="tech-tag">Expert Systems</span>
-                            <span class="tech-tag">Industrial Robots</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-aos="fade-right">
-                    <div class="timeline-year">1990-2010</div>
-                    <div class="timeline-content glass-morphism">
-                        <div class="timeline-icon">🚀</div>
-                        <h3>뉵럴네트워크 혁신</h3>
-                        <p>딥러닝과 뉵럴네트워크의 비약적 발전. 기계학습의 새로운 패러다임 시작.</p>
-                        <div class="timeline-tech">
-                            <span class="tech-tag">Deep Learning</span>
-                            <span class="tech-tag">Neural Networks</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-aos="fade-left">
-                    <div class="timeline-year">2010-2020</div>
-                    <div class="timeline-content glass-morphism">
-                        <div class="timeline-icon">🌟</div>
-                        <h3>스마트 로봇 시대</h3>
-                        <p>인공지능과 로봇의 융합. 자율주행차, 서비스 로봇 등 스마트 로봇의 본격적 등장.</p>
-                        <div class="timeline-tech">
-                            <span class="tech-tag">Smart Robots</span>
-                            <span class="tech-tag">Autonomous Systems</span>
-                            <span class="tech-tag">IoT Integration</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-aos="fade-right">
-                    <div class="timeline-year">2020+</div>
-                    <div class="timeline-content glass-morphism future-card">
-                        <div class="timeline-icon">🔮</div>
-                        <h3>미래 AI 로봇</h3>
-                        <p>차세대 AI 로봇의 시대. 인간과 로봇의 완전한 협업으로 새로운 미래를 창조합니다.</p>
-                        <div class="timeline-tech">
-                            <span class="tech-tag">AGI</span>
-                            <span class="tech-tag">Humanoid Robots</span>
-                            <span class="tech-tag">Quantum AI</span>
-                        </div>
-                    </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3 class="feature-title">자율 시스템</h3>
+                    <p class="feature-description">
+                        완전 자율적인 작동이 가능한 스마트 로봇 시스템. 
+                        센서 융합과 실시간 데이터 처리로 안전하고 효율적인 자동화 구현.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Expertise Matrix -->
-    <section id="expertise" class="expertise">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">
-                    <span class="title-bg">AI TECH</span>
-                    <span class="title-main">핵심 AI 로봇 기술</span>
-                </h2>
-                <p class="section-subtitle">체개적 AI 로봇 기술로 스마트 미래를 실현합니다</p>
-            </div>
-
-            <div class="expertise-matrix">
-                <div class="skill-hexagon" data-skill="95">
-                    <div class="hexagon-content">
-                        <div class="skill-icon">🤖</div>
-                        <h3>로봇 설계</h3>
-                        <div class="skill-progress">
-                            <svg class="progress-ring" width="120" height="120">
-                                <circle class="progress-ring-circle" stroke="#00ff88" stroke-width="4" fill="transparent" r="52" cx="60" cy="60"/>
-                            </svg>
-                            <div class="skill-percent">95%</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-hexagon" data-skill="90">
-                    <div class="hexagon-content">
-                        <div class="skill-icon">🧠</div>
-                        <h3>딥러닝</h3>
-                        <div class="skill-progress">
-                            <svg class="progress-ring" width="120" height="120">
-                                <circle class="progress-ring-circle" stroke="#ff6b35" stroke-width="4" fill="transparent" r="52" cx="60" cy="60"/>
-                            </svg>
-                            <div class="skill-percent">90%</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-hexagon" data-skill="88">
-                    <div class="hexagon-content">
-                        <div class="skill-icon">🕰️</div>
-                        <h3>자율 제어</h3>
-                        <div class="skill-progress">
-                            <svg class="progress-ring" width="120" height="120">
-                                <circle class="progress-ring-circle" stroke="#4ecdc4" stroke-width="4" fill="transparent" r="52" cx="60" cy="60"/>
-                            </svg>
-                            <div class="skill-percent">88%</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-hexagon" data-skill="85">
-                    <div class="hexagon-content">
-                        <div class="skill-icon">🔍</div>
-                        <h3>컴퓨터 비전</h3>
-                        <div class="skill-progress">
-                            <svg class="progress-ring" width="120" height="120">
-                                <circle class="progress-ring-circle" stroke="#a8e6cf" stroke-width="4" fill="transparent" r="52" cx="60" cy="60"/>
-                            </svg>
-                            <div class="skill-percent">85%</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-hexagon" data-skill="92">
-                    <div class="hexagon-content">
-                        <div class="skill-icon">💬</div>
-                        <h3>자연어 처리</h3>
-                        <div class="skill-progress">
-                            <svg class="progress-ring" width="120" height="120">
-                                <circle class="progress-ring-circle" stroke="#ff8b94" stroke-width="4" fill="transparent" r="52" cx="60" cy="60"/>
-                            </svg>
-                            <div class="skill-percent">92%</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-hexagon" data-skill="87">
-                    <div class="hexagon-content">
-                        <div class="skill-icon">🔋</div>
-                        <h3>센서 융합</h3>
-                        <div class="skill-progress">
-                            <svg class="progress-ring" width="120" height="120">
-                                <circle class="progress-ring-circle" stroke="#b4a7d6" stroke-width="4" fill="transparent" r="52" cx="60" cy="60"/>
-                            </svg>
-                            <div class="skill-percent">87%</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Showcase -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <header class="section-header">
-                <h2 class="section-title">
-                    <span class="title-bg">PROJECTS</span>
-                    <span class="title-main">AI 로봇 프로젝트</span>
-                </h2>
-                <p class="section-subtitle">실제 AI 로봇 프로젝트들을 3D 환경에서 체험해보세요</p>
-            </header>
-
-            <div class="portfolio-filters">
-                <button class="filter-btn active" data-filter="all">전체</button>
-                <button class="filter-btn" data-filter="humanoid">휴머노이드</button>
-                <button class="filter-btn" data-filter="service">서비스로봇</button>
-                <button class="filter-btn" data-filter="industrial">산업용로봇</button>
-                <button class="filter-btn" data-filter="ai">AI 시스템</button>
-            </div>
-
-            <div class="portfolio-3d-grid">
-                <article class="portfolio-item floating-card" data-category="humanoid">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1561144257-e32e71a1e9c8?auto=format&fit=crop&w=800&h=600" alt="휴머노이드 교육 로봇 - AI 로봇" loading="lazy">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h3>휴머노이드 교육 로봇</h3>
-                                <p>1,300명 학생을 위한 스마트 교육 로봇 시스템</p>
-                                <div class="portfolio-tags">
-                                    <span class="tag">휴머노이드</span>
-                                    <span class="tag">교육AI</span>
-                                    <span class="tag">스마트로봇</span>
-                                </div>
-                                <button class="portfolio-btn">자세히 보기</button>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="portfolio-item floating-card" data-category="service">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&h=600" alt="스마트 미러 로봇 - AI 대화형 서비스" loading="lazy">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h3>스마트 미러 로봇</h3>
-                                <p>AI 기반 맞춤형 서비스 로봇 개발</p>
-                                <div class="portfolio-tags">
-                                    <span class="tag">서비스로봇</span>
-                                    <span class="tag">AI미러</span>
-                                    <span class="tag">스마트홈</span>
-                                </div>
-                                <button class="portfolio-btn">자세히 보기</button>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="portfolio-item floating-card" data-category="industrial">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=800&h=600" alt="의료 로봇 시스템 - AI 진단 지원" loading="lazy">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h3>의료 로봇 시스템</h3>
-                                <p>의료 환경 특화 AI 로봇 솔루션</p>
-                                <div class="portfolio-tags">
-                                    <span class="tag">의료로봇</span>
-                                    <span class="tag">엑스레이AI</span>
-                                    <span class="tag">진단지원</span>
-                                </div>
-                                <button class="portfolio-btn">자세히 보기</button>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="portfolio-item floating-card" data-category="ai">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=800&h=600" alt="AI 채팅 로봇 - 자연어 처리 시스템" loading="lazy">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h3>AI 채팅 로봇 시스템</h3>
-                                <p>1400명 네트워크 AI 채팅 로봇 구축</p>
-                                <div class="portfolio-tags">
-                                    <span class="tag">AI채팅</span>
-                                    <span class="tag">대화로봇</span>
-                                    <span class="tag">자연어처리</span>
-                                </div>
-                                <button class="portfolio-btn">자세히 보기</button>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="portfolio-item floating-card" data-category="service">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&h=600" alt="영업 지원 로봇 - 비즈니스 자동화" loading="lazy">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h3>영업 지원 로봇</h3>
-                                <p>영업 프로세스 자동화 로봇 시스템</p>
-                                <div class="portfolio-tags">
-                                    <span class="tag">영업로봇</span>
-                                    <span class="tag">자동처리</span>
-                                    <span class="tag">업무지원</span>
-                                </div>
-                                <button class="portfolio-btn">자세히 보기</button>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="portfolio-item floating-card" data-category="ai">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800&h=600" alt="양자 AI 로봇 - 차세대 양자 컴퓨팅" loading="lazy">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h3>양자 AI 로봇 시스템</h3>
-                                <p>차세대 양자 컴퓨팅 기반 AI 로봇</p>
-                                <div class="portfolio-tags">
-                                    <span class="tag">양자AI</span>
-                                    <span class="tag">양자로봇</span>
-                                    <span class="tag">미래기술</span>
-                                </div>
-                                <button class="portfolio-btn">자세히 보기</button>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Future Vision -->
-    <section id="future" class="future">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">
-                    <span class="title-bg">FUTURE</span>
-                    <span class="title-main">미래 AI 로봇 로드맵</span>
-                </h2>
-                <p class="section-subtitle">다가올 AI 로봇 미래를 미리 경험해보세요</p>
-            </div>
-
-            <div class="future-roadmap">
-                <div class="roadmap-timeline">
-                    <div class="roadmap-item" data-year="2025">
-                        <div class="roadmap-content glass-morphism">
-                            <h3>완전 자율 로봇</h3>
-                            <p>완전한 자율 사고와 행동을 가진 스마트 로봇</p>
-                            <div class="roadmap-tech">🤖 Fully Autonomous Robots</div>
-                        </div>
-                    </div>
-                    
-                    <div class="roadmap-item" data-year="2026">
-                        <div class="roadmap-content glass-morphism">
-                            <h3>인간-로봇 협업</h3>
-                            <p>인간과 로봇이 완벽하게 협업하는 시스템</p>
-                            <div class="roadmap-tech">🤝 Human-Robot Collaboration</div>
-                        </div>
-                    </div>
-                    
-                    <div class="roadmap-item" data-year="2027">
-                        <div class="roadmap-content glass-morphism">
-                            <h3>에알알 시대</h3>
-                            <p>에알알 시대 완전한 인공지능 로봇</p>
-                            <div class="roadmap-tech">🧠 Embodied AI Robots</div>
-                        </div>
-                    </div>
-
-                    <div class="roadmap-item" data-year="2030">
-                        <div class="roadmap-content glass-morphism">
-                            <h3>지각 생명체 로봇</h3>
-                            <p>생각하고 감정을 가진 지각 생명체 로봇</p>
-                            <div class="roadmap-tech">🤖 Sentient AI Beings</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Updates Section -->
-    <section id="updates" class="updates">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">
-                    <span class="title-bg">UPDATES</span>
-                    <span class="title-main">최신 업데이트</span>
-                </h2>
-                <p class="section-subtitle">AI 로봇 기술의 최신 업데이트와 개선사항을 확인하세요</p>
-            </div>
-
-            <div class="updates-timeline">
-                <div class="update-item featured" data-aos="fade-up">
-                    <div class="update-date">
-                        <div class="date-circle">
-                            <span class="day">11</span>
-                            <span class="month">Jul</span>
-                            <span class="year">2025</span>
-                        </div>
-                    </div>
-                    <div class="update-content glass-morphism">
-                        <div class="update-badge">🆕 Latest Update</div>
-                        <h3>AI 로봇 웹사이트 리뉴얼 완료</h3>
-                        <div class="update-summary">
-                            <p>사용자 친화적인 밝은 테마로 전면 리뉴얼하여 더욱 깔끔하고 직관적인 디자인으로 개선되었습니다.</p>
-                        </div>
-                        
-                        <div class="update-details">
-                            <h4>🎨 디자인 개선사항</h4>
-                            <ul class="improvement-list">
-                                <li>
-                                    <span class="improvement-icon">🌟</span>
-                                    <div class="improvement-content">
-                                        <strong>밝은 테마 적용</strong>
-                                        <p>어두운 배경에서 밝고 깔끔한 흰색 계열로 변경하여 가독성 향상</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="improvement-icon">🧭</span>
-                                    <div class="improvement-content">
-                                        <strong>네비게이션 개선</strong>
-                                        <p>사이트맵 드롭다운 메뉴 추가로 모든 페이지 접근성 향상</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="improvement-icon">🚀</span>
-                                    <div class="improvement-content">
-                                        <strong>성능 최적화</strong>
-                                        <p>불필요한 마우스 커서 효과 제거로 로딩 속도 개선</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="improvement-icon">🤖</span>
-                                    <div class="improvement-content">
-                                        <strong>AI 로봇 콘텐츠 강화</strong>
-                                        <p>모든 섹션을 AI 로봇 관련 내용으로 전면 개편</p>
-                                    </div>
-                                </li>
-                            </ul>
-
-                            <h4>🔧 기술적 개선사항</h4>
-                            <ul class="technical-list">
-                                <li>색상 팔레트 최적화 (다크 → 라이트 테마)</li>
-                                <li>JavaScript 오류 수정 및 안정성 향상</li>
-                                <li>반응형 디자인 개선</li>
-                                <li>접근성 향상을 위한 UI/UX 개선</li>
-                                <li>배경 애니메이션 효과 경량화</li>
-                            </ul>
-
-                            <h4>📱 사용자 경험 향상</h4>
-                            <ul class="ux-list">
-                                <li>직관적인 네비게이션 구조</li>
-                                <li>명확한 콘텐츠 구분</li>
-                                <li>빠른 페이지 로딩</li>
-                                <li>모바일 친화적 디자인</li>
-                            </ul>
-                        </div>
-
-                        <div class="update-stats">
-                            <div class="stat-item">
-                                <span class="stat-number">100%</span>
-                                <span class="stat-label">AI 로봇 콘텐츠</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">50%</span>
-                                <span class="stat-label">성능 향상</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">95%</span>
-                                <span class="stat-label">사용자 만족도</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="update-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="update-date">
-                        <div class="date-circle">
-                            <span class="day">10</span>
-                            <span class="month">Jul</span>
-                            <span class="year">2025</span>
-                        </div>
-                    </div>
-                    <div class="update-content glass-morphism">
-                        <h3>AI 로봇 프로젝트 포트폴리오 업데이트</h3>
-                        <p>다양한 AI 로봇 프로젝트 사례들을 추가하여 실제 구현 경험을 공유합니다.</p>
-                        <div class="update-tags">
-                            <span class="tag">포트폴리오</span>
-                            <span class="tag">프로젝트</span>
-                            <span class="tag">AI 로봇</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="update-item" data-aos="fade-up" data-aos-delay="400">
-                    <div class="update-date">
-                        <div class="date-circle">
-                            <span class="day">09</span>
-                            <span class="month">Jul</span>
-                            <span class="year">2025</span>
-                        </div>
-                    </div>
-                    <div class="update-content glass-morphism">
-                        <h3>미래 AI 로봇 로드맵 발표</h3>
-                        <p>2025년부터 2030년까지의 AI 로봇 기술 발전 방향과 계획을 제시합니다.</p>
-                        <div class="update-tags">
-                            <span class="tag">로드맵</span>
-                            <span class="tag">미래기술</span>
-                            <span class="tag">계획</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Quantum -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">
-                    <span class="title-bg">CONTACT</span>
-                    <span class="title-main">AI 로봇 서비스</span>
-                </h2>
-                <p class="section-subtitle">함께 AI 로봇 미래를 만들어갈 파트너를 찾고 있습니다</p>
-            </div>
-
-            <div class="contact-quantum">
-                <div class="contact-info">
-                    <div class="quantum-card glass-morphism">
-                        <div class="card-header">
-                            <h3>AI 로봇 연결</h3>
-                            <div class="quantum-dot"></div>
-                        </div>
-                        <div class="contact-items">
-                            <div class="contact-item">
-                                <div class="contact-icon">📧</div>
-                                <div class="contact-details">
-                                    <h4>AI 로봇 이메일</h4>
-                                    <p>jun22sky@nate.com</p>
-                                    <span>AI 로봇 상담 24시간 대기</span>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <div class="contact-icon">📱</div>
-                                <div class="contact-details">
-                                    <h4>AI 로봇 핫라인</h4>
-                                    <p>010-****-3888</p>
-                                    <span>AI 로봇 전문가 즉시 연결</span>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <div class="contact-icon">🌐</div>
-                                <div class="contact-details">
-                                    <h4>AI 로봇 센터</h4>
-                                    <p>서울시 종로구</p>
-                                    <span>AI 로봇 연구개발 센터</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="quantum-card glass-morphism">
-                        <div class="card-header">
-                            <h3>AI 로봇 지표</h3>
-                            <div class="quantum-dot active"></div>
-                        </div>
-                        <div class="innovation-metrics">
-                            <div class="metric-item">
-                                <div class="metric-icon">⚡</div>
-                                <div class="metric-content">
-                                    <span class="metric-value counter">99.9</span>
-                                    <span class="metric-unit">%</span>
-                                    <span class="metric-label">AI 로봇 안정성</span>
-                                </div>
-                            </div>
-                            <div class="metric-item">
-                                <div class="metric-icon">🚀</div>
-                                <div class="metric-content">
-                                    <span class="metric-value counter">300</span>
-                                    <span class="metric-unit">%</span>
-                                    <span class="metric-label">AI 로봇 효율성</span>
-                                </div>
-                            </div>
-                            <div class="metric-item">
-                                <div class="metric-icon">💡</div>
-                                <div class="metric-content">
-                                    <span class="metric-value counter">24</span>
-                                    <span class="metric-unit">/7</span>
-                                    <span class="metric-label">AI 로봇 모니터링</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact-form-quantum">
-                    <form class="quantum-form" id="quantumContactForm">
-                        <div class="form-header">
-                            <h3>AI 로봇 프로젝트 시작</h3>
-                            <div class="form-energy-bar">
-                                <div class="energy-fill"></div>
-                            </div>
-                        </div>
-
-                        <div class="form-groups">
-                            <div class="form-group floating-label">
-                                <input type="text" id="name" name="name" required>
-                                <label for="name">AI 로봇 파트너 이름</label>
-                                <div class="field-glow"></div>
-                            </div>
-
-                            <div class="form-group floating-label">
-                                <input type="email" id="email" name="email" required>
-                                <label for="email">AI 로봇 연결점</label>
-                                <div class="field-glow"></div>
-                            </div>
-
-                            <div class="form-group floating-label">
-                                <input type="text" id="company" name="company">
-                                <label for="company">AI 로봇 조직</label>
-                                <div class="field-glow"></div>
-                            </div>
-
-                            <div class="form-group floating-label">
-                                <select id="project-type" name="project-type" required>
-                                    <option value="">AI 로봇 유형 선택</option>
-                                    <option value="humanoid">휴머노이드 로봇</option>
-                                    <option value="service">서비스 로봇</option>
-                                    <option value="industrial">산업용 로봇</option>
-                                    <option value="ai-system">AI 시스템</option>
-                                    <option value="robot-consulting">로봇 컨설팅</option>
-                                </select>
-                                <label for="project-type">프로젝트 유형</label>
-                                <div class="field-glow"></div>
-                            </div>
-
-                            <div class="form-group floating-label">
-                                <textarea id="message" name="message" rows="4" required></textarea>
-                                <label for="message">AI 로봇 아이디어</label>
-                                <div class="field-glow"></div>
-                            </div>
-                        </div>
-
-                        <button type="submit" class="quantum-submit-btn">
-                            <span class="btn-text">AI 로봇 시작하기</span>
-                            <div class="btn-quantum-effect"></div>
-                            <div class="btn-particles"></div>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer Infinity -->
-    <footer class="footer-infinity">
-        <div class="footer-bg">
-            <canvas id="footer-canvas"></canvas>
-        </div>
-        
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="brand-logo">
-                        <div class="logo-quantum">AI ROBOT</div>
-                        <div class="logo-tagline">Future Intelligence</div>
-                    </div>
-                    <p class="brand-description">
-                        인공지능과 로봇이 만나는 지점에서<br>
-                        새로운 미래를 창조합니다
-                    </p>
-                    <div class="social-quantum">
-                        <a href="https://blog.naver.com/jun22sky" class="social-link" data-platform="naver">
-                            <div class="social-icon">📝</div>
-                            <span>네이버</span>
-                        </a>
-                        <a href="https://www.instagram.com/junetapa/" class="social-link" data-platform="instagram">
-                            <div class="social-icon">📸</div>
-                            <span>인스타</span>
-                        </a>
-                        <a href="https://www.tiktok.com/@junetapa0" class="social-link" data-platform="tiktok">
-                            <div class="social-icon">🎵</div>
-                            <span>틱톡</span>
-                        </a>
-                        <a href="https://youtube.com/@junetapa" class="social-link" data-platform="youtube">
-                            <div class="social-icon">📺</div>
-                            <span>유튜브</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="footer-nav">
-                    <div class="nav-column">
-                        <h4>AI 로봇 영역</h4>
-                        <ul>
-                            <li><a href="#humanoid">휴머노이드 로봇</a></li>
-                            <li><a href="#service">서비스 로봇</a></li>
-                            <li><a href="#industrial">산업용 로봇</a></li>
-                            <li><a href="#ai-system">AI 시스템</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="nav-column">
-                        <h4>AI 로봇 포트폴리오</h4>
-                        <ul>
-                            <li><a href="#portfolio">로봇 갤러리</a></li>
-                            <li><a href="#case-studies">AI 로봇 사례</a></li>
-                            <li><a href="#tech-blog">로봇 기술 블로그</a></li>
-                            <li><a href="#innovation-lab">AI 로봇 연구소</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="nav-column">
-                        <h4>파트너십</h4>
-                        <ul>
-                            <li><a href="#contact">AI 로봇 파트너</a></li>
-                            <li><a href="#consulting">로봇 컨설팅</a></li>
-                            <li><a href="#collaboration">로봇 협업</a></li>
-                            <li><a href="#future-projects">AI 로봇 미래</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <div class="copyright">
-                    <p>&copy; 2025 AI 로봇 전문가. 모든 AI 로봇 경험은 계속됩니다.</p>
-                    <p class="innovation-quote">"AI Robot is not just technology, it's about creating the future together."</p>
+                <h3>AI 로봇과 함께하는 미래</h3>
+                <p>인공지능과 로봇 기술의 융합으로 새로운 가능성을 열어갑니다.</p>
+                
+                <div class="social-links">
+                    <a href="https://blog.naver.com/jun22sky" class="social-link" title="네이버 블로그">📝</a>
+                    <a href="https://www.instagram.com/junetapa/" class="social-link" title="인스타그램">📸</a>
+                    <a href="https://www.tiktok.com/@junetapa0" class="social-link" title="틱톡">🎵</a>
+                    <a href="https://youtube.com/@junetapa" class="social-link" title="유튜브">📺</a>
                 </div>
                 
-                <div class="footer-status">
-                    <div class="status-indicator">
-                        <div class="status-dot active"></div>
-                        <span>AI 로봇 시스템 가동 중</span>
-                    </div>
-                    <div class="quantum-time">
-                        <span id="quantum-clock">00:00:00</span>
-                    </div>
-                </div>
+                <p style="margin-top: 2rem; opacity: 0.7;">
+                    &copy; 2025 AI 로봇 전문가. 모든 권리 보유.
+                </p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="js/core/quantum.js"></script>
-    <script src="js/components/navigation.js"></script>
-    <script src="js/sections/hero.js"></script>
     <script src="js/utils/imageLoader.js"></script>
     <script src="js/utils/fontLoader.js"></script>
-    <script src="js/main.js"></script>
+    
+    <script>
+        // GSAP 애니메이션
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // 히어로 섹션 애니메이션
+        gsap.from(".hero-title", {
+            duration: 1.5,
+            y: 50,
+            opacity: 0,
+            ease: "power2.out"
+        });
+        
+        gsap.from(".hero-subtitle", {
+            duration: 1.5,
+            y: 30,
+            opacity: 0,
+            delay: 0.3,
+            ease: "power2.out"
+        });
+        
+        gsap.from(".hero-description", {
+            duration: 1.5,
+            y: 20,
+            opacity: 0,
+            delay: 0.6,
+            ease: "power2.out"
+        });
+        
+        gsap.from(".cta-button", {
+            duration: 1.5,
+            y: 20,
+            opacity: 0,
+            delay: 0.9,
+            ease: "power2.out"
+        });
+        
+        // 피쳐 카드 애니메이션
+        gsap.from(".feature-card", {
+            duration: 1,
+            y: 50,
+            opacity: 0,
+            stagger: 0.2,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".features-grid",
+                start: "top 80%"
+            }
+        });
+        
+        // 부드러운 스크롤
+        document.querySelector('.cta-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#features').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+        
+        // 이미지 lazy loading
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.classList.remove('lazy');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+            
+            images.forEach(img => imageObserver.observe(img));
+        }
+    </script>
 </body>
 </html>
