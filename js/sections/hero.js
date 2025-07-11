@@ -9,11 +9,11 @@ class HeroSection {
         this.statCards = document.querySelectorAll('.stat-card');
         
         this.typewriterTexts = [
-            '기술로 미래를 설계합니다',
-            'Innovation through Technology',
-            '혁신적 사고로 문제를 해결합니다',
-            'Creating Tomorrow Today',
-            '디지털 트랜스포메이션을 이끕니다'
+            'AI 로봇으로 미래를 설계합니다',
+            'Intelligent Robots for Tomorrow',
+            '스마트 로봇으로 문제를 해결합니다',
+            'Creating AI Robot Future',
+            'AI 로봇 혁신을 이끕니다'
         ];
         
         this.currentTextIndex = 0;
@@ -156,16 +156,16 @@ class HeroSection {
         this.scene.add(ambientLight);
         
         // Directional light
-        const directionalLight = new THREE.DirectionalLight(0x00ff88, 1);
+        const directionalLight = new THREE.DirectionalLight(0x007bff, 1);
         directionalLight.position.set(1, 1, 1);
         this.scene.add(directionalLight);
         
         // Point lights for dynamic effects
-        const pointLight1 = new THREE.PointLight(0xff6b35, 0.8, 50);
+        const pointLight1 = new THREE.PointLight(0x6c757d, 0.6, 50);
         pointLight1.position.set(10, 10, 10);
         this.scene.add(pointLight1);
         
-        const pointLight2 = new THREE.PointLight(0x4ecdc4, 0.8, 50);
+        const pointLight2 = new THREE.PointLight(0x28a745, 0.6, 50);
         pointLight2.position.set(-10, -10, 10);
         this.scene.add(pointLight2);
     }

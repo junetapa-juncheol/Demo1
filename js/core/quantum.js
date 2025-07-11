@@ -10,11 +10,11 @@ class QuantumEngine {
         this.animationId = null;
         this.isRunning = false;
         this.settings = {
-            particleCount: 150,
-            fieldStrength: 0.1,
-            quantumTunneling: true,
-            waveFunction: true,
-            entanglement: true
+            particleCount: 50,
+            fieldStrength: 0.05,
+            quantumTunneling: false,
+            waveFunction: false,
+            entanglement: false
         };
     }
 
@@ -279,8 +279,8 @@ class QuantumEngine {
     }
 
     render() {
-        // Clear canvas with quantum fade effect
-        this.ctx.fillStyle = 'rgba(10, 10, 10, 0.05)';
+        // Clear canvas with light fade effect
+        this.ctx.fillStyle = 'rgba(248, 249, 250, 0.1)';
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
         
         // Render quantum fields
@@ -309,8 +309,8 @@ class QuantumEngine {
             field.x, field.y, field.radius
         );
         
-        gradient.addColorStop(0, `rgba(0, 255, 136, ${field.strength * 0.3})`);
-        gradient.addColorStop(1, 'rgba(0, 255, 136, 0)');
+        gradient.addColorStop(0, `rgba(0, 123, 255, ${field.strength * 0.2})`);
+        gradient.addColorStop(1, 'rgba(0, 123, 255, 0)');
         
         this.ctx.fillStyle = gradient;
         this.ctx.beginPath();
@@ -346,8 +346,8 @@ class QuantumEngine {
             this.ctx.translate(particle.x, particle.y);
             this.ctx.rotate(particle.spin);
             
-            const alpha = Math.min(1, particle.energy / 100);
-            const color = particle.charge > 0 ? '0, 255, 136' : '255, 107, 53';
+            const alpha = Math.min(0.8, particle.energy / 100);
+            const color = particle.charge > 0 ? '0, 123, 255' : '108, 117, 125';
             
             this.ctx.fillStyle = `rgba(${color}, ${alpha})`;
             this.ctx.beginPath();
@@ -379,7 +379,7 @@ class QuantumEngine {
             const intensity = Math.sin(phase) * alpha;
             
             if (intensity > 0) {
-                this.ctx.strokeStyle = `rgba(0, 255, 136, ${intensity})`;
+                this.ctx.strokeStyle = `rgba(0, 123, 255, ${intensity})`;
                 this.ctx.lineWidth = 1;
                 this.ctx.beginPath();
                 this.ctx.arc(particle.x, particle.y, waveRadius, 0, Math.PI * 2);
@@ -403,7 +403,7 @@ class QuantumEngine {
                 if (distance < maxDistance) {
                     const alpha = (1 - distance / maxDistance) * 0.3;
                     
-                    this.ctx.strokeStyle = `rgba(255, 255, 255, ${alpha})`;
+                    this.ctx.strokeStyle = `rgba(0, 123, 255, ${alpha})`;
                     this.ctx.lineWidth = 1;
                     this.ctx.beginPath();
                     this.ctx.moveTo(particle1.x, particle1.y);

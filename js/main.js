@@ -4,7 +4,7 @@
 class JunetapaApp {
     constructor() {
         this.isLoaded = false;
-        this.currentTheme = 'dark-theme';
+        this.currentTheme = 'light-theme';
         this.animations = new Map();
         this.observers = new Map();
         
@@ -168,7 +168,7 @@ class JunetapaApp {
     }
 
     initializeTheme() {
-        const savedTheme = localStorage.getItem('junetapa-theme') || 'dark-theme';
+        const savedTheme = localStorage.getItem('junetapa-theme') || 'light-theme';
         this.setTheme(savedTheme);
         
         const themeToggle = document.querySelector('.theme-toggle');
@@ -197,7 +197,7 @@ class JunetapaApp {
     }
 
     toggleTheme() {
-        const newTheme = this.currentTheme === 'dark-theme' ? 'light-theme' : 'dark-theme';
+        const newTheme = this.currentTheme === 'light-theme' ? 'dark-theme' : 'light-theme';
         
         // Add transition class
         document.body.classList.add('theme-transitioning');
@@ -211,75 +211,22 @@ class JunetapaApp {
     }
 
     initializeCursor() {
-        // 모바일 디바이스 체크
-        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) 
-                        || window.innerWidth <= 768 
-                        || 'ontouchstart' in window;
-        
-        const cursor = document.getElementById('cursor-follower');
-        
-        // 모바일에서는 커서 숨기기
-        if (isMobile) {
-            if (cursor) {
-                cursor.style.display = 'none';
-            }
-            return;
-        }
-        
-        // 데스크탑에서만 커서 효과 적용
-        const cursorInner = cursor.querySelector('.cursor-inner');
-        const cursorOuter = cursor.querySelector('.cursor-outer');
-        
-        let mouseX = 0, mouseY = 0;
-        let innerX = 0, innerY = 0;
-        let outerX = 0, outerY = 0;
-        
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
-        
-        const animateCursor = () => {
-            // Inner cursor (fast)
-            innerX += (mouseX - innerX) * 0.3;
-            innerY += (mouseY - innerY) * 0.3;
-            cursorInner.style.transform = `translate(${innerX - 4}px, ${innerY - 4}px)`;
-            
-            // Outer cursor (slow)
-            outerX += (mouseX - outerX) * 0.1;
-            outerY += (mouseY - outerY) * 0.1;
-            cursorOuter.style.transform = `translate(${outerX - 16}px, ${outerY - 16}px)`;
-            
-            requestAnimationFrame(animateCursor);
-        };
-        
-        animateCursor();
-        
-        // Cursor interactions
-        const interactiveElements = document.querySelectorAll('a, button, .portfolio-item, .floating-card');
-        
-        interactiveElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursorOuter.style.transform += ' scale(1.5)';
-                cursorInner.style.transform += ' scale(2)';
-            });
-            
-            el.addEventListener('mouseleave', () => {
-                cursorOuter.style.transform = cursorOuter.style.transform.replace(' scale(1.5)', '');
-                cursorInner.style.transform = cursorInner.style.transform.replace(' scale(2)', '');
-            });
-        });
+        // 커서 팔로워가 제거되었으므로 함수 비활성화
+        return;
     }
 
     initializeGSAP() {
-        // Set up global GSAP defaults
-        gsap.defaults({
-            duration: 0.8,
-            ease: "power2.out"
-        });
-        
-        // Create main timeline
-        this.mainTimeline = gsap.timeline({ paused: true });
+        // GSAP가 로드되어 있는 경우에만 초기화
+        if (typeof gsap !== 'undefined') {
+            // Set up global GSAP defaults
+            gsap.defaults({
+                duration: 0.8,
+                ease: "power2.out"
+            });
+            
+            // Create main timeline
+            this.mainTimeline = gsap.timeline({ paused: true });
+        }
     }
 
     initializeScrollEffects() {
@@ -406,10 +353,18 @@ class JunetapaApp {
         
         element.dataset.animated = 'true';
         
-        gsap.fromTo(element, 
-            { opacity: 0, x: element.classList.contains('fade-in-left') ? -100 : 100 },
-            { opacity: 1, x: 0, duration: 1, ease: "power2.out" }
-        );
+        // GSAP가 있는 경우 사용, 없으면 CSS 애니메이션 사용
+        if (typeof gsap !== 'undefined') {
+            gsap.fromTo(element, 
+                { opacity: 0, x: element.classList.contains('fade-in-left') ? -100 : 100 },
+                { opacity: 1, x: 0, duration: 1, ease: "power2.out" }
+            );
+        } else {
+            // CSS 애니메이션으로 대체
+            element.style.transition = 'opacity 1s ease, transform 1s ease';
+            element.style.opacity = '1';
+            element.style.transform = 'translateX(0)';
+        }
     }
 
     updateParallax() {

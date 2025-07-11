@@ -38,12 +38,12 @@ class Navigation {
             // Glass morphism effect on scroll
             if (scrollY > 50) {
                 this.navbar.classList.add('scrolled');
-                this.navbar.style.background = 'rgba(255, 255, 255, 0.1)';
+                this.navbar.style.background = 'rgba(255, 255, 255, 0.98)';
                 this.navbar.style.backdropFilter = 'blur(20px)';
                 this.navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.1)';
             } else {
                 this.navbar.classList.remove('scrolled');
-                this.navbar.style.background = 'rgba(255, 255, 255, 0.05)';
+                this.navbar.style.background = 'rgba(255, 255, 255, 0.95)';
                 this.navbar.style.backdropFilter = 'blur(10px)';
                 this.navbar.style.boxShadow = 'none';
             }
@@ -279,7 +279,7 @@ class Navigation {
         // Create logo geometry
         const geometry = new THREE.IcosahedronGeometry(0.8, 1);
         const material = new THREE.MeshBasicMaterial({ 
-            color: 0x00ff88,
+            color: 0x007bff,
             wireframe: true,
             transparent: true,
             opacity: 0.8
@@ -310,7 +310,7 @@ class Navigation {
         // Add hover effect with CSS transforms
         logoText.addEventListener('mouseenter', () => {
             logoText.style.transform = 'perspective(1000px) rotateX(10deg) rotateY(10deg)';
-            logoText.style.textShadow = '0 0 20px rgba(0, 255, 136, 0.8)';
+            logoText.style.textShadow = '0 0 20px rgba(0, 123, 255, 0.8)';
         });
         
         logoText.addEventListener('mouseleave', () => {
