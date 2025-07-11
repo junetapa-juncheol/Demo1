@@ -2,13 +2,13 @@
 /* Quantum-inspired design system variables */
 
 :root {
-    /* Color Palette - Dark Theme */
-    --primary-quantum: #00ff88;
-    --secondary-quantum: #ff6b35;
-    --tertiary-quantum: #4ecdc4;
-    --accent-primary: #a8e6cf;
-    --accent-secondary: #ff8b94;
-    --accent-tertiary: #b4a7d6;
+    /* Color Palette - Light Theme */
+    --primary-quantum: #007bff;
+    --secondary-quantum: #6c757d;
+    --tertiary-quantum: #28a745;
+    --accent-primary: #17a2b8;
+    --accent-secondary: #dc3545;
+    --accent-tertiary: #6f42c1;
     
     /* Neon Colors */
     --neon-cyan: #00ffff;
@@ -19,22 +19,22 @@
     --neon-purple: #8a2be2;
     
     /* Background Colors */
-    --bg-primary: #0a0a0a;
-    --bg-secondary: #1a1a1a;
-    --bg-tertiary: #2a2a2a;
-    --bg-glass: rgba(255, 255, 255, 0.1);
-    --bg-glass-dark: rgba(0, 0, 0, 0.3);
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-tertiary: #e9ecef;
+    --bg-glass: rgba(0, 0, 0, 0.1);
+    --bg-glass-dark: rgba(255, 255, 255, 0.3);
     
     /* Text Colors */
-    --text-primary: #ffffff;
-    --text-secondary: #b0b0b0;
-    --text-tertiary: #808080;
-    --text-accent: var(--primary-quantum);
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --text-tertiary: #6a6a6a;
+    --text-accent: #007bff;
     
     /* Gradients */
     --gradient-quantum: linear-gradient(135deg, var(--primary-quantum) 0%, var(--secondary-quantum) 50%, var(--tertiary-quantum) 100%);
-    --gradient-neon: linear-gradient(45deg, var(--neon-cyan) 0%, var(--neon-magenta) 25%, var(--neon-yellow) 50%, var(--neon-green) 75%, var(--neon-orange) 100%);
-    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    --gradient-neon: linear-gradient(45deg, var(--primary-quantum) 0%, var(--accent-primary) 25%, var(--tertiary-quantum) 50%, var(--accent-secondary) 75%, var(--accent-tertiary) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.02) 100%);
     --gradient-dark: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
     
     /* Typography */
@@ -82,17 +82,17 @@
     --radius-full: 50%;
     
     /* Shadows */
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
     --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
-    --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
-    --shadow-neon: 0 0 20px var(--primary-quantum);
-    --shadow-glow: 0 0 30px rgba(255, 255, 255, 0.3);
+    --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.15);
+    --shadow-neon: 0 0 20px rgba(0, 123, 255, 0.3);
+    --shadow-glow: 0 0 30px rgba(0, 0, 0, 0.1);
     
     /* Glass Morphism */
-    --glass-bg: rgba(255, 255, 255, 0.1);
-    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-border: rgba(0, 0, 0, 0.1);
     --glass-backdrop: blur(10px);
     
     /* Transitions */
